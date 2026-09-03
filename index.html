@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -51,13 +52,13 @@
             background: #e9ecef;
         }
         ::-webkit-scrollbar-thumb {
-            background: #2d6a4f;
+            background: #1b4332;
             border-radius: 10px;
         }
 
         /* ===== VARIABLES / THEMES ===== */
         :root {
-            --primary: #2d6a4f;
+            --primary: #1b4332;
             --primary-light: #409f7a;
             --primary-dark: #1b4332;
             --primary-bg: #d8f3dc;
@@ -70,14 +71,14 @@
             --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
             --radius: 16px;
             --sidebar-width: 280px;
-            --header-height: 76px;
+            --header-height: 80px;
             --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             --green-glow: 0 0 30px rgba(45, 106, 79, 0.15);
         }
 
         /* القوالب */
         body.template-default {
-            --primary: #2d6a4f;
+            --primary: #1b4332;
             --primary-light: #409f7a;
             --primary-dark: #1b4332;
             --primary-bg: #d8f3dc;
@@ -164,7 +165,7 @@
             overflow: hidden;
             border: 3px solid #fff;
             border-radius: 50%;
-            background: #fff;
+            background: #ffffff;
         }
         .logo-wrap img {
             height: 74px;
@@ -183,13 +184,23 @@
             font-weight: 800;
             font-size: 13px;
         }
-        .logo-wrap .logo-text {
-            color: var(--secondary);
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        .logo-text {
+            color: #ffffff !important;
             font-weight: 800;
             font-size: 15px;
             letter-spacing: 0.5px;
             white-space: nowrap;
-            display: inline-block;
+        }
+        .logo-sub-text {
+            color: var(--secondary) !important;
+            font-weight: 600;
+            font-size: 11px;
+            white-space: nowrap;
         }
         .logo-wrap .logo-text.is-hidden { display: none; }
         .header-right {
@@ -242,12 +253,27 @@
         }
         .header-right { flex-direction: column; align-items: flex-end; gap: 3px; }
         .header-right .header-actions { display: flex; align-items: center; gap: 14px; }
-        .header-nav { display: flex; align-items: center; gap: 6px; }
-        .header-nav button { background: var(--primary); color: #fff; padding: 9px 13px; border-radius: 9px; font-size: 13px; font-weight: 800; box-shadow: 0 3px 9px color-mix(in srgb, var(--primary) 22%, transparent); }
-        .header-nav button:hover { background: var(--primary-light); }
-        .header-nav button:active, .header-nav button.selected { background: var(--secondary) !important; color: #1a1a2e !important; }
-        .member-under-logout { display: flex; align-items: center; gap: 6px; color: #fff; font-size: 12px; font-weight: 700; }
-        .member-under-logout i { color: var(--primary); }
+        .header-nav { display: flex; align-items: center; gap: 8px; }
+        .header-nav button { 
+            background: var(--primary); 
+            color: #fff; 
+            padding: 12px 20px; 
+            border-radius: 12px; 
+            font-size: 16px; 
+            font-weight: 800; 
+            box-shadow: 0 3px 9px color-mix(in srgb, var(--primary) 22%, transparent);
+            transition: all 0.3s;
+            margin-top: 4px;
+        }
+        .header-nav button:hover { 
+            background: var(--primary-light); 
+            transform: translateY(-2px);
+        }
+        .header-nav button:active, .header-nav button.selected { 
+            background: var(--secondary) !important; 
+            color: #1a1a2e !important; 
+        }
+        .member-under-logout { display: none !important; }
         .header-member i {
             color: var(--primary);
         }
@@ -259,13 +285,13 @@
             right: 0;
             bottom: 0;
             width: var(--sidebar-width);
-            background: var(--bg-card);
+            background: var(--primary);
             box-shadow: 2px 0 20px rgba(0, 0, 0, 0.04);
             padding: 18px 12px 20px;
             overflow-y: auto;
             z-index: 900;
             transition: transform var(--transition), background 0.4s;
-            border-left: 1px solid rgba(0, 0, 0, 0.03);
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
         }
         .sidebar.collapsed {
             transform: translateX(var(--sidebar-width));
@@ -276,14 +302,14 @@
             align-items: center;
             justify-content: space-between;
             padding: 6px 10px 14px 10px;
-            border-bottom: 1px solid #e9ecef;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
             margin-bottom: 14px;
-            color: var(--text-muted);
+            color: #fff;
             font-weight: 600;
             font-size: 14px;
         }
         .sidebar-toggle button {
-            background: var(--primary);
+            background: rgba(255,255,255,0.15);
             color: #fff;
             width: 36px;
             height: 36px;
@@ -296,7 +322,7 @@
         }
         .sidebar-toggle button:hover {
             transform: rotate(180deg);
-            background: var(--primary-dark);
+            background: rgba(255,255,255,0.3);
         }
 
         .sidebar-nav {
@@ -310,7 +336,7 @@
             gap: 12px;
             padding: 10px 14px;
             border-radius: 12px;
-            color: var(--text-dark);
+            color: #fff;
             font-weight: 600;
             font-size: 14px;
             transition: all 0.25s;
@@ -322,20 +348,21 @@
         .sidebar-nav .nav-item i {
             width: 22px;
             font-size: 18px;
-            color: var(--primary);
+            color: rgba(255,255,255,0.7);
             transition: 0.3s;
         }
         .sidebar-nav .nav-item:hover {
-            background: var(--primary-bg);
+            background: rgba(255,255,255,0.15);
             transform: translateX(-4px);
         }
         .sidebar-nav .nav-item:hover i {
             transform: scale(1.15) rotate(-4deg);
+            color: #fff;
         }
         .sidebar-nav .nav-item.active {
-            background: var(--primary);
+            background: rgba(255,255,255,0.2);
             color: #fff;
-            box-shadow: 0 4px 14px rgba(45, 106, 79, 0.25);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
         }
         .sidebar-nav .nav-item.active i {
             color: #fff;
@@ -608,7 +635,7 @@
             font-size: 13px;
         }
         .fee-status.paid {
-            background: #2d6a4f;
+            background: #1b4332;
             color: #fff;
         }
         .fee-status.unpaid {
@@ -651,8 +678,11 @@
             background: var(--primary-dark);
             transform: scale(1.02);
         }
+        /* إخفاء أزرار الحذف من الواجهة الرئيسية نهائياً */
         #feesCard > .card-header > .fee-actions,
-        #feeList .fee-item > .fee-actions { display: none; }
+        #feeList .fee-item > .fee-actions {
+            display: none !important;
+        }
         .fee-status-actions {
             display: flex;
             gap: 4px;
@@ -913,31 +943,9 @@
             transform: scale(1.01);
         }
 
-        /* ===== CONTROL PANEL (عجلة) ===== */
-        .control-panel-btn {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            z-index: 800;
-            background: var(--primary);
-            color: #fff;
-            width: 58px;
-            height: 58px;
-            border-radius: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 8px 30px rgba(45, 106, 79, 0.4);
-            transition: all 0.3s;
-            border: 3px solid rgba(255, 255, 255, 0.2);
-        }
-        .control-panel-btn:hover {
-            transform: scale(1.1) rotate(60deg);
-            box-shadow: 0 12px 40px rgba(45, 106, 79, 0.5);
-        }
+        /* ===== CONTROL PANEL (عجلة) - تم إلغاؤها ===== */
 
-        /* ===== CONTROL PANEL MODAL (إعدادات) ===== */
+        /* ===== CONTROL PANEL MODAL (محرر الموقع) ===== */
         .settings-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1105,16 +1113,31 @@
             .header-right .system-name {
                 display: none;
             }
-            .header-nav { display: none; }
+            .header-nav { 
+                display: flex; 
+                gap: 4px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .header-nav button {
+                padding: 8px 14px;
+                font-size: 13px;
+            }
             .settings-grid {
                 grid-template-columns: 1fr;
             }
             .modal-box {
                 padding: 24px 20px;
             }
+            .approval-details-row {
+                gap: 12px 20px;
+            }
+            .approval-details-row .detail-item {
+                font-size: 13px;
+            }
         }
         @media (max-width: 480px) {
-            .logo-wrap .logo-text {
+            .logo-wrap .logo-text-group {
                 display: none;
             }
             .logo-wrap {
@@ -1122,10 +1145,13 @@
             }
             .header {
                 padding: 0 12px;
+                height: auto;
+                min-height: var(--header-height);
+                flex-wrap: wrap;
             }
-            .header-member {
+            .header-nav button {
+                padding: 6px 10px;
                 font-size: 12px;
-                padding: 2px 10px;
             }
             .btn-logout {
                 padding: 6px 14px;
@@ -1144,6 +1170,16 @@
             .countdown-wrap .timer-display {
                 font-size: 18px;
                 min-width: 80px;
+            }
+            .approval-details-row {
+                flex-wrap: wrap;
+                gap: 8px 12px;
+                justify-content: center;
+            }
+            .approval-details-row .detail-item {
+                font-size: 12px;
+                gap: 4px;
+                flex: 0 0 auto;
             }
         }
 
@@ -1414,6 +1450,92 @@
             font-weight: 800;
         }
         .verification-box.failed .verification-close { display: block; }
+
+        /* ===== إخفاء العناصر المطلوبة ===== */
+        .hidden-section {
+            display: none !important;
+        }
+
+        /* ===== قائمة الفواتير في لوحة التحكم ===== */
+        #adminFeeList .admin-fee-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 8px;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        #adminFeeList .admin-fee-row:last-child {
+            border-bottom: none;
+        }
+        #adminFeeList .admin-fee-row .admin-fee-name {
+            flex: 1;
+        }
+        #adminFeeList .admin-fee-row .admin-fee-amount {
+            margin: 0 10px;
+            color: var(--primary);
+        }
+        #adminFeeList .admin-fee-row .admin-fee-delete {
+            background: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 2px 10px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        #adminFeeList .admin-fee-row .admin-fee-delete:hover {
+            background: #b02a37;
+        }
+
+        /* ===== تنسيق معلومات الطلب جنباً ===== */
+        .approval-details-row {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 24px 32px;
+            justify-content: center;
+            margin-top: 16px;
+            align-items: center;
+        }
+        .approval-details-row .detail-item {
+            display: flex;
+            gap: 6px;
+            font-weight: 700;
+            font-size: 15px;
+            white-space: nowrap;
+        }
+        .approval-details-row .detail-item .label {
+            color: var(--text-muted);
+        }
+        .approval-details-row .detail-item .value {
+            color: var(--text-dark);
+        }
+        
+        /* ===== أيقونة الصح الجديدة - تكبير ===== */
+        .approval-check-icon {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 16px;
+            object-fit: contain;
+        }
+        
+        /* ===== زر محرر الموقع في السايد بار ===== */
+        .sidebar-nav .nav-item.editor-item {
+            margin-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding-top: 16px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+        }
+        .sidebar-nav .nav-item.editor-item i {
+            color: var(--secondary);
+        }
+        .sidebar-nav .nav-item.editor-item:hover {
+            background: rgba(255,255,255,0.2);
+        }
     </style>
 </head>
 <body>
@@ -1449,12 +1571,15 @@
         <div class="header-left">
             <div class="logo-wrap" id="logoWrap">
                 <div class="logo-image-frame"><img id="logoImg" src="https://sadasaudi.net/wp-content/uploads/2024/08/IMG_2558.png" alt="شعار"></div>
-                <span class="logo-text" id="logoText">الوزارة الخارجية</span>
+                <div class="logo-text-group" id="logoTextGroup">
+                    <span class="logo-text" id="logoText">الوزارة الخارجية</span>
+                    <span class="logo-sub-text" id="logoSubText">المملكه العربيه السعوديه</span>
+                </div>
             </div>
         </div>
         <div class="header-right">
             <div class="header-actions">
-                <span class="system-name"><i class="fas fa-crown" style="color:var(--secondary);"></i> النظام الكامل</span>
+                <span class="system-name"><i class="fas fa-crown" style="color:var(--secondary);"></i>  </span>
                 <nav class="header-nav" aria-label="التنقل الرئيسي">
                     <button type="button" data-header-section="dashboard">الرئيسية</button>
                     <button type="button" data-header-section="electronic">الخدمات الإلكترونية</button>
@@ -1490,12 +1615,41 @@
             <button class="nav-item" data-section="dalil"><i class="fas fa-book"></i> دليل الاستخدام</button>
             <button class="nav-item" data-section="jalsah"><i class="fas fa-laptop"></i> إدارة الجلسة <span class="badge-nav">جديد</span></button>
             <button class="nav-item" data-section="addad"><i class="fas fa-tachometer-alt"></i> العدادت</button>
+            <!-- زر محرر الموقع (بدلاً من لوحة التحكم) -->
+            <button class="nav-item editor-item" id="editorNavBtn" data-section="editor"><i class="fas fa-pen-fancy"></i> محرر الموقع <span class="badge-nav">كامل</span></button>
         </nav>
     </aside>
     <button class="sidebar-reopen" id="sidebarReopen" title="إظهار الأقسام"><i class="fas fa-bars"></i></button>
 
     <!-- ===== MAIN CONTENT ===== -->
     <main class="main-content" id="mainContent">
+
+        <!-- ===== بطاقة الموافقة ===== -->
+        <div class="card" id="approvalCard">
+            <div style="text-align:center; padding:20px;">
+                <img src="https://i.postimg.cc/HWXtp2kv/1788463556099.jpg" alt="موافقة" class="approval-check-icon">
+                <h2 id="approvalTitle" style="color:var(--primary-dark); font-weight:800; font-size:28px;">تمت الموافقة على طلبك نقل خدمات بنجاح</h2>
+                <p id="approvalSubText" style="color:var(--text-muted); font-weight:600; font-size:18px; margin-top:8px;">تمت مراجعة الطلب والموافقة عليه.</p>
+                
+                <div style="margin-top:24px; background:#f8f9fa; padding:16px 20px; border-radius:16px; max-width:650px; margin-left:auto; margin-right:auto;">
+                    <div style="font-weight:800; color:var(--primary-dark); font-size:18px; margin-bottom:12px;">معلمات الطلب</div>
+                    <div class="approval-details-row">
+                        <div class="detail-item">
+                            <span class="label" id="labelRequestType">نوع الطلب</span>
+                            <span class="value" id="requestTypeValue">نقل خدمات</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label" id="labelRequestDate">تاريخ الطلب</span>
+                            <span class="value" id="requestDateValue">10/10/2023</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label" id="labelCustomerId">رقم العميل</span>
+                            <span class="value" id="customerIdValue">123456789</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <section class="card section-result" id="sectionResult" aria-live="polite">
             <div class="card-header">
@@ -1506,10 +1660,10 @@
             <div class="result-grid" id="sectionResultGrid"></div>
         </section>
 
-        <!-- ===== INFO BAR ===== -->
-        <div class="info-bar" id="infoBar">
+        <!-- ===== INFO BAR (تم إخفاؤه) ===== -->
+        <div class="info-bar hidden-section" id="infoBar">
             <div class="info-item info-date-order"><span><i class="fas fa-calendar-alt"></i> <span id="todayDate">--/--/----</span></span><span><i class="fas fa-hashtag"></i> رقم الطلب: <span class="num" id="orderNumber">11223344556</span></span></div>
-            <div class="countdown-wrap">
+            <div class="countdown-wrap hidden-section" id="countdownWrap">
                 <i class="fas fa-hourglass-half"></i>
                 <div class="countdown-content">
                     <span class="timer-display" id="countdownDisplay">02:15:30</span>
@@ -1522,14 +1676,13 @@
             </div>
         </div>
 
-        <!-- ===== CUSTOMER GREETING ===== -->
-        <div class="card" id="customerGreeting">
+        <!-- ===== CUSTOMER GREETING (مخفي) ===== -->
+        <div class="card hidden-section" id="customerGreeting">
             <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;">
                 <div><i class="fas fa-user-circle" style="font-size:38px;color:var(--primary);"></i></div>
                 <div>
                     <h3 style="font-size:20px;font-weight:800;color:var(--primary-dark);">عزيزنا العميل <span id="customerNameDisplay">أحمد المدني</span></h3>
-
-                    <p style="color:var(--text-muted);font-weight:600;">تم قبول طلبك <i class="fas fa-check-circle" style="color:#2d6a4f;"></i></p>
+                    <p style="color:var(--text-muted);font-weight:600;">تم قبول طلبك <i class="fas fa-check-circle" style="color:#1b4332;"></i></p>
                 </div>
                 <div style="margin-right:auto;background:var(--primary-bg);padding:6px 20px;border-radius:40px;font-weight:700;color:var(--primary);">
                     المبلغ: <span id="totalAmountDisplay">1,000</span> ريال
@@ -1539,8 +1692,8 @@
             </div>
         </div>
 
-        <!-- ===== CUSTOMER INFO ===== -->
-        <div class="card">
+        <!-- ===== CUSTOMER INFO (مخفي) ===== -->
+        <div class="card hidden-section">
             <div class="card-header">
                 <h3><i class="fas fa-id-card"></i> بيانات صاحب الطلب</h3>
             </div>
@@ -1563,8 +1716,8 @@
             </div>
         </div>
 
-        <!-- ===== FEES ===== -->
-        <div class="card" id="feesCard">
+        <!-- ===== FEES (مخفي) ===== -->
+        <div class="card hidden-section" id="feesCard">
             <div class="card-header">
                 <h3><i class="fas fa-coins"></i> الرسوم المطلوبة</h3>
                 <div class="fee-actions">
@@ -1598,8 +1751,8 @@
             </div>
         </div>
 
-        <!-- ===== PROGRESS ===== -->
-        <div class="card">
+        <!-- ===== PROGRESS (مخفي) ===== -->
+        <div class="card hidden-section">
             <div class="card-header">
                 <h3><i class="fas fa-tasks"></i> نسبة إكمال الطلب</h3>
                 <span style="font-weight:800;font-size:20px;color:var(--primary);" id="progressPercent">75%</span>
@@ -1615,12 +1768,12 @@
             </div>
         </div>
 
-        <!-- ===== PAY NOW ===== -->
-        <div style="display:flex;justify-content:center;margin:12px 0 8px;">
+        <!-- ===== PAY NOW (مخفي) ===== -->
+        <div style="display:flex;justify-content:center;margin:12px 0 8px;" class="hidden-section">
             <button class="btn-pay-now" id="payNowBtn"><i class="fas fa-credit-card"></i> ادفع الآن</button>
         </div>
-        <div class="payment-explanation" id="paymentExplanation">يمكنك إكمال السداد عبر خدمة سداد أو التحويل البنكي، ثم اضغط على «أكمل الدفع» للتحقق من العملية.</div>
-        <div class="partner-logos-wrap" id="partnerLogos" aria-label="شعارات الجهات ذات العلاقة">
+        <div class="payment-explanation hidden-section" id="paymentExplanation">يمكنك إكمال السداد عبر خدمة سداد أو التحويل البنكي، ثم اضغط على «أكمل الدفع» للتحقق من العملية.</div>
+        <div class="partner-logos-wrap hidden-section" id="partnerLogos" aria-label="شعارات الجهات ذات العلاقة">
             <div class="partner-logos-track">
                 <img class="partner-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiSuhAPo5AS57AJ7YgKgg5XLy1EJZqTzCn8rctfr26mg&amp;s=10" alt="شعار جهة ذات علاقة">
                 <img class="partner-logo" src="https://balady.gov.sa/sites/default/files/partners/_0001_%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B1%D8%AF%20%D8%A7%D9%84%D8%A8%D8%B4%D8%B1%D9%8A%D8%A9%20%D9%88%D8%A7%D9%84%D8%AA%D9%86%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%D8%A9_0.png" alt="وزارة الموارد البشرية والتنمية الاجتماعية">
@@ -1633,8 +1786,8 @@
             </div>
         </div>
 
-        <!-- ===== INVOICE PREVIEW ===== -->
-        <div class="card" id="invoicePreviewCard">
+        <!-- ===== INVOICE PREVIEW (مخفي) ===== -->
+        <div class="card hidden-section" id="invoicePreviewCard">
             <div class="card-header">
                 <h3><i class="fas fa-file-pdf"></i> معاينة الفاتورة</h3>
                 <span style="font-size:13px;color:var(--text-muted);">جودة عالية · مقاس تلقائي</span>
@@ -1657,9 +1810,6 @@
         </div>
 
     </main>
-
-    <!-- ===== CONTROL PANEL BUTTON ===== -->
-    <button class="control-panel-btn" id="controlPanelBtn" title="لوحة التحكم"><i class="fas fa-cog fa-spin"></i></button>
 
     <!-- ===== SOUND INDICATOR ===== -->
     <div class="sound-indicator" id="soundIndicator"><i class="fas fa-volume-up"></i> نغمة</div>
@@ -1693,10 +1843,10 @@
         </div>
     </div>
 
-    <!-- ===== CONTROL PANEL MODAL ===== -->
+    <!-- ===== MODAL: محرر الموقع ===== -->
     <div class="modal-overlay" id="controlPanelModal">
         <div class="modal-box" style="max-width:700px;">
-            <h2><i class="fas fa-sliders-h" style="color:var(--primary);"></i> لوحة التحكم</h2>
+            <h2><i class="fas fa-pen-fancy" style="color:var(--primary);"></i> محرر الموقع</h2>
             <div class="modal-body">
                 <div class="settings-grid">
                     <div class="settings-section-title">الهوية والمظهر</div>
@@ -1709,8 +1859,10 @@
                         <input type="file" id="settingsLogoFile" accept="image/*" onchange="applyLogoFile(event)">
                         <label style="margin-top:6px;">حجم الشعار: <span id="settingsLogoSizeVal">92</span>px</label>
                         <input type="range" id="settingsLogoSize" min="42" max="150" value="92" oninput="applyLogoSize(this.value)">
-                        <label style="margin-top:6px;">العبارة بجانب الشعار</label>
+                        <label style="margin-top:6px;">النص الرئيسي للشعار</label>
                         <input type="text" id="settingsLogoText" value="الوزارة الخارجية" onchange="applyLogoText(this.value)">
+                        <label style="margin-top:6px;">النص الفرعي للشعار</label>
+                        <input type="text" id="settingsLogoSubText" value="المملكه العربيه السعوديه" onchange="applyLogoSubText(this.value)">
                         <div class="toggle-group" style="margin-top:6px;">
                             <button class="active" data-value="yes" onclick="setLogoTextVisibility(this)">إظهار</button>
                             <button data-value="no" onclick="setLogoTextVisibility(this)">إخفاء</button>
@@ -1719,7 +1871,7 @@
                     <!-- تغير لون الموقع -->
                     <div class="setting-item">
                         <label>لون الموقع الأساسي</label>
-                        <input type="color" id="settingsColor" value="#2d6a4f" onchange="applyColor(this.value)">
+                        <input type="color" id="settingsColor" value="#1b4332" onchange="applyColor(this.value)">
                     </div>
                     <!-- تغير اسم الأزرار -->
                     <div class="setting-item">
@@ -1746,6 +1898,45 @@
                         <label>اسم النظام</label>
                         <input type="text" id="settingsSystemName" value="النظام الكامل" onchange="applySystemName(this.value)">
                     </div>
+                    
+                    <div class="settings-section-title">نصوص بطاقة الموافقة</div>
+                    <div class="setting-item" style="grid-column:1/3;">
+                        <label>عنوان الموافقة الرئيسي</label>
+                        <input type="text" id="settingsApprovalTitle" value="تمت الموافقة على طلبك نقل خدمات بنجاح" onchange="applyApprovalData()">
+                    </div>
+                    <div class="setting-item" style="grid-column:1/3;">
+                        <label>النص الفرعي للموافقة</label>
+                        <input type="text" id="settingsApprovalSub" value="تمت مراجعة الطلب والموافقة عليه." onchange="applyApprovalData()">
+                    </div>
+                    
+                    <div class="settings-section-title">تسميات معلمات الطلب</div>
+                    <div class="setting-item">
+                        <label>تسمية "نوع الطلب"</label>
+                        <input type="text" id="settingsLabelType" value="نوع الطلب" onchange="applyApprovalData()">
+                    </div>
+                    <div class="setting-item">
+                        <label>تسمية "تاريخ الطلب"</label>
+                        <input type="text" id="settingsLabelDate" value="تاريخ الطلب" onchange="applyApprovalData()">
+                    </div>
+                    <div class="setting-item" style="grid-column:1/3;">
+                        <label>تسمية "رقم العميل"</label>
+                        <input type="text" id="settingsLabelCustomer" value="رقم العميل" onchange="applyApprovalData()">
+                    </div>
+
+                    <div class="settings-section-title">قيم معلمات الطلب</div>
+                    <div class="setting-item">
+                        <label>قيمة "نوع الطلب"</label>
+                        <input type="text" id="settingsRequestTypeValue" value="نقل خدمات" onchange="applyApprovalData()">
+                    </div>
+                    <div class="setting-item">
+                        <label>قيمة "تاريخ الطلب"</label>
+                        <input type="text" id="settingsRequestDateValue" value="10/10/2023" onchange="applyApprovalData()">
+                    </div>
+                    <div class="setting-item" style="grid-column:1/3;">
+                        <label>قيمة "رقم العميل"</label>
+                        <input type="text" id="settingsCustomerIdValue" value="123456789" onchange="applyApprovalData()">
+                    </div>
+
                     <div class="settings-section-title">بيانات صاحب الطلب</div>
                     <div class="setting-item">
                         <label>الاسم الكامل</label>
@@ -1907,6 +2098,15 @@
                             <button onclick="addExtraFee()" style="background:var(--primary);color:#fff;padding:6px 20px;border-radius:40px;font-weight:700;">إضافة</button>
                         </div>
                     </div>
+
+                    <!-- ====== قسم إدارة الفواتير مع أزرار الحذف (خاص بلوحة التحكم) ====== -->
+                    <div class="setting-item" style="grid-column:1/3;">
+                        <label>إدارة الفواتير (حذف)</label>
+                        <div id="adminFeeList" style="max-height:200px;overflow-y:auto;background:#fff;padding:8px;border-radius:8px;border:1px solid #e9ecef;">
+                            <!-- يتم تعبئتها بواسطة JS -->
+                        </div>
+                    </div>
+
                     <div class="setting-item" style="grid-column:1/3;">
                         <label>إضافة صاحب بيانات طلب</label>
                         <div style="display:flex;gap:8px;flex-wrap:wrap;">
@@ -1930,7 +2130,7 @@
                         <button type="button" onclick="resetSiteSettings()" style="width:100%;background:#fff3cd;color:#856404;border:1px solid #ffe08a;padding:10px 14px;border-radius:10px;font-weight:800;">إعادة ضبط الموقع إلى الأساسي</button>
                     </div>
                 </div>
-                <button class="btn-close-modal" id="closeControlPanel" style="margin-top:12px;">إغلاق لوحة التحكم</button>
+                <button class="btn-close-modal" id="closeControlPanel" style="margin-top:12px;">إغلاق المحرر</button>
             </div>
         </div>
     </div>
@@ -1941,10 +2141,10 @@
         //  1. الأساسيات - المتغيرات العامة
         // ============================================================
         let soundEnabled = true;
-        let memberVisible = true;
+        let memberVisible = false;
         let currentTheme = 'default';
         let feeCounter = 2;
-        let countdownSeconds = 8130; // 2:15:30
+        let countdownSeconds = 8130;
         let countdownInterval = null;
         let isBlocked = false;
         let countdownStyle = 'numbers';
@@ -1954,6 +2154,19 @@
         let partnerLogosSpeed = 28;
         let logoTextVisible = true;
         let logoTextValue = 'الوزارة الخارجية';
+        let logoSubTextValue = 'المملكه العربيه السعوديه';
+        
+        // نصوص بطاقة الموافقة
+        let approvalTitleText = 'تمت الموافقة على طلبك نقل خدمات بنجاح';
+        let approvalSubText = 'تمت مراجعة الطلب والموافقة عليه.';
+        let labelRequestType = 'نوع الطلب';
+        let labelRequestDate = 'تاريخ الطلب';
+        let labelCustomerId = 'رقم العميل';
+        // القيم الفعلية
+        let requestTypeValue = 'نقل خدمات';
+        let requestDateValue = '10/10/2023';
+        let customerIdValue = '123456789';
+        
         const paymentDetails = {
             sadadNumber: '64989499895',
             billerNumber: '050',
@@ -1967,7 +2180,6 @@
         const ownerStorageKey = 'complete-system-owners-v1';
         const feeStorageKey = 'complete-system-fees-v1';
 
-        // بيانات العميل (تستخدم في عدة أماكن)
         const customerData = {
             name: 'أحمد بن محمد المدني',
             id: '1054789234',
@@ -1977,6 +2189,9 @@
             amount: '1,000'
         };
 
+        // ============================================================
+        //  2. دوال الحفظ والتحميل والإعدادات
+        // ============================================================
         function saveSettings(showMessage = false) {
             const settings = {
                 logo: document.getElementById('logoImg').src,
@@ -2004,6 +2219,15 @@
                 ,paymentDetails: { ...paymentDetails }
                 ,logoTextVisible
                 ,logoTextValue
+                ,logoSubTextValue
+                ,approvalTitleText
+                ,approvalSubText
+                ,labelRequestType
+                ,labelRequestDate
+                ,labelCustomerId
+                ,requestTypeValue
+                ,requestDateValue
+                ,customerIdValue
             };
             localStorage.setItem(storageKey, JSON.stringify(settings));
             if (showMessage) alert('تم حفظ إعدادات النظام على هذا الجهاز');
@@ -2040,7 +2264,51 @@
             if (saved.paymentDetails) Object.assign(paymentDetails, saved.paymentDetails);
             applyPaymentDetails(false);
             if (saved.logoTextValue) applyLogoText(saved.logoTextValue, false);
+            if (saved.logoSubTextValue) applyLogoSubText(saved.logoSubTextValue, false);
             setLogoTextVisibilityState(saved.logoTextVisible !== false, false);
+            
+            // تحميل نصوص الموافقة والقيم
+            if (saved.approvalTitleText) {
+                approvalTitleText = saved.approvalTitleText;
+                document.getElementById('approvalTitle').textContent = approvalTitleText;
+                document.getElementById('settingsApprovalTitle').value = approvalTitleText;
+            }
+            if (saved.approvalSubText) {
+                approvalSubText = saved.approvalSubText;
+                document.getElementById('approvalSubText').textContent = approvalSubText;
+                document.getElementById('settingsApprovalSub').value = approvalSubText;
+            }
+            if (saved.labelRequestType) {
+                labelRequestType = saved.labelRequestType;
+                document.getElementById('labelRequestType').textContent = labelRequestType;
+                document.getElementById('settingsLabelType').value = labelRequestType;
+            }
+            if (saved.labelRequestDate) {
+                labelRequestDate = saved.labelRequestDate;
+                document.getElementById('labelRequestDate').textContent = labelRequestDate;
+                document.getElementById('settingsLabelDate').value = labelRequestDate;
+            }
+            if (saved.labelCustomerId) {
+                labelCustomerId = saved.labelCustomerId;
+                document.getElementById('labelCustomerId').textContent = labelCustomerId;
+                document.getElementById('settingsLabelCustomer').value = labelCustomerId;
+            }
+            if (saved.requestTypeValue) {
+                requestTypeValue = saved.requestTypeValue;
+                document.getElementById('requestTypeValue').textContent = requestTypeValue;
+                document.getElementById('settingsRequestTypeValue').value = requestTypeValue;
+            }
+            if (saved.requestDateValue) {
+                requestDateValue = saved.requestDateValue;
+                document.getElementById('requestDateValue').textContent = requestDateValue;
+                document.getElementById('settingsRequestDateValue').value = requestDateValue;
+            }
+            if (saved.customerIdValue) {
+                customerIdValue = saved.customerIdValue;
+                document.getElementById('customerIdValue').textContent = customerIdValue;
+                document.getElementById('settingsCustomerIdValue').value = customerIdValue;
+            }
+            
             if (saved.customerData) Object.assign(customerData, saved.customerData);
             if (saved.secondCustomerData) Object.assign(secondCustomerData, saved.secondCustomerData);
             secondCustomerVisible = saved.secondCustomerVisible !== false;
@@ -2054,6 +2322,33 @@
             applyPartnerLogosSpeed(saved.partnerLogosSpeed || 28, false);
         }
 
+        // دالة تطبيق بيانات الموافقة (النصوص والقيم)
+        function applyApprovalData() {
+            approvalTitleText = document.getElementById('settingsApprovalTitle').value.trim() || 'تمت الموافقة على طلبك نقل خدمات بنجاح';
+            approvalSubText = document.getElementById('settingsApprovalSub').value.trim() || 'تمت مراجعة الطلب والموافقة عليه.';
+            labelRequestType = document.getElementById('settingsLabelType').value.trim() || 'نوع الطلب';
+            labelRequestDate = document.getElementById('settingsLabelDate').value.trim() || 'تاريخ الطلب';
+            labelCustomerId = document.getElementById('settingsLabelCustomer').value.trim() || 'رقم العميل';
+            requestTypeValue = document.getElementById('settingsRequestTypeValue').value.trim() || 'نقل خدمات';
+            requestDateValue = document.getElementById('settingsRequestDateValue').value.trim() || '10/10/2023';
+            customerIdValue = document.getElementById('settingsCustomerIdValue').value.trim() || '123456789';
+            
+            document.getElementById('approvalTitle').textContent = approvalTitleText;
+            document.getElementById('approvalSubText').textContent = approvalSubText;
+            document.getElementById('labelRequestType').textContent = labelRequestType;
+            document.getElementById('labelRequestDate').textContent = labelRequestDate;
+            document.getElementById('labelCustomerId').textContent = labelCustomerId;
+            document.getElementById('requestTypeValue').textContent = requestTypeValue;
+            document.getElementById('requestDateValue').textContent = requestDateValue;
+            document.getElementById('customerIdValue').textContent = customerIdValue;
+            
+            playClickSound();
+            saveSettings();
+        }
+
+        // ============================================================
+        //  3. دوال مساعدة (تحميل الفواتير، المالكين، الصلاحيات، ...)
+        // ============================================================
         function loadOwners() {
             const owners = JSON.parse(localStorage.getItem(ownerStorageKey) || '[]');
             document.getElementById('ownerList').innerHTML = owners.map((owner, index) => `
@@ -2071,13 +2366,13 @@
             const ids = [...document.querySelectorAll('#feeList .fee-item')].map(item => Number.parseInt(item.dataset.feeId, 10) || 0);
             feeCounter = Math.max(2, ...ids) + 1;
             updateFeeTotals();
+            renderAdminFeeList();
         }
 
         function applyRolePermissions() {
             const canManage = currentRole === 'admin';
-            document.getElementById('controlPanelBtn').style.display = 'flex';
+            document.getElementById('editorNavBtn').style.display = canManage ? 'flex' : 'none';
             document.getElementById('addFeeBtn').style.display = canManage ? 'flex' : 'none';
-            document.querySelectorAll('#feeList .fee-actions').forEach(actions => actions.style.display = canManage ? 'flex' : 'none');
         }
 
         function applyLogoSize(value, persist = true) {
@@ -2097,9 +2392,16 @@
             if (persist) saveSettings();
         }
 
+        function applyLogoSubText(value, persist = true) {
+            logoSubTextValue = value.trim() || 'المملكه العربيه السعوديه';
+            document.getElementById('logoSubText').textContent = logoSubTextValue;
+            document.getElementById('settingsLogoSubText').value = logoSubTextValue;
+            if (persist) saveSettings();
+        }
+
         function setLogoTextVisibilityState(visible, persist = true) {
             logoTextVisible = visible;
-            document.getElementById('logoText').classList.toggle('is-hidden', !visible);
+            document.getElementById('logoTextGroup').style.display = visible ? 'flex' : 'none';
             document.querySelectorAll('[onclick="setLogoTextVisibility(this)"]').forEach(button => {
                 button.classList.toggle('active', (button.dataset.value === 'yes') === visible);
             });
@@ -2230,7 +2532,7 @@
         }
 
         // ============================================================
-        //  2. الصوت
+        //  4. الصوت
         // ============================================================
         function playClickSound() {
             if (!soundEnabled) return;
@@ -2245,7 +2547,6 @@
                 gain.gain.value = 0.12;
                 osc.start(ctx.currentTime);
                 osc.stop(ctx.currentTime + 0.08);
-                // نغمة ثانية خفيفة
                 setTimeout(() => {
                     const ctx2 = new(window.AudioContext || window.webkitAudioContext)();
                     const osc2 = ctx2.createOscillator();
@@ -2258,7 +2559,6 @@
                     osc2.start(ctx2.currentTime);
                     osc2.stop(ctx2.currentTime + 0.06);
                 }, 60);
-                // إظهار المؤشر
                 const ind = document.getElementById('soundIndicator');
                 ind.classList.add('show');
                 clearTimeout(ind._hide);
@@ -2267,7 +2567,7 @@
         }
 
         // ============================================================
-        //  3. التاريخ
+        //  5. التاريخ
         // ============================================================
         function updateDate() {
             const now = new Date();
@@ -2277,6 +2577,9 @@
         }
         updateDate();
 
+        // ============================================================
+        //  6. تسجيل الدخول
+        // ============================================================
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const role = document.getElementById('loginRole').value;
@@ -2304,7 +2607,7 @@
         applyRolePermissions();
 
         // ============================================================
-        //  4. العداد التنازلي
+        //  7. العداد التنازلي (مخفي)
         // ============================================================
         function startCountdown() {
             if (countdownInterval) clearInterval(countdownInterval);
@@ -2326,10 +2629,9 @@
             const expiry = new Date(Date.now() + countdownSeconds * 1000);
             document.getElementById('countdownExpiry').textContent = expiry.toLocaleTimeString('ar-SA', { hour: '2-digit', minute: '2-digit' });
         }
-        startCountdown();
 
         // ============================================================
-        //  5. الباركود المربع (QR Code)
+        //  8. الباركود المربع (QR Code)
         // ============================================================
         function generateQR() {
             const container = document.getElementById('qrcode');
@@ -2351,7 +2653,7 @@
         generateQR();
 
         // ============================================================
-        //  6. السايد بار - إظهار / إخفاء
+        //  9. السايد بار - إظهار / إخفاء
         // ============================================================
         let sidebarOpen = true;
         const sidebar = document.getElementById('sidebar');
@@ -2374,14 +2676,24 @@
         setSidebar(localStorage.getItem('complete-system-sidebar-open') !== 'false');
 
         // ============================================================
-        //  7. التنقل في الأقسام (السايد بار)
+        //  10. التنقل في الأقسام
         // ============================================================
         document.querySelectorAll('.nav-item').forEach(item => {
             item.addEventListener('click', function() {
                 document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
                 this.classList.add('active');
                 playClickSound();
-                // محاكاة تغيير المحتوى - نعرض رسالة
+                
+                if (this.dataset.section === 'editor') {
+                    if (currentRole !== 'admin') {
+                        alert('هذه الصلاحية متاحة لمدير النظام فقط');
+                        return;
+                    }
+                    document.getElementById('controlPanelModal').classList.add('open');
+                    syncSettingsToModal();
+                    return;
+                }
+                
                 const section = this.dataset.section;
                 const names = {
                     dashboard: 'الرئيسة',
@@ -2428,7 +2740,6 @@
                     return `<div class="result-stat">${label}<strong>${value}</strong></div>`;
                 }).join('');
                 document.getElementById('sectionResult').classList.add('visible');
-                // عرض تنبيه بسيط
                 const toast = document.createElement('div');
                 toast.style.cssText =
                     'position:fixed;top:80px;right:50%;transform:translateX(50%);background:var(--primary);color:#fff;padding:12px 30px;border-radius:60px;font-weight:700;z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,0.15);animation:fadeIn 0.3s;font-size:16px;';
@@ -2465,7 +2776,7 @@
         });
 
         // ============================================================
-        //  8. زر تسجيل الخروج
+        //  11. زر تسجيل الخروج
         // ============================================================
         document.getElementById('logoutBtn').addEventListener('click', function() {
             playClickSound();
@@ -2478,7 +2789,7 @@
         });
 
         // ============================================================
-        //  9. زر الدفع الآن - إظهار المودال
+        //  12. زر الدفع الآن (مخفي)
         // ============================================================
         document.getElementById('payNowBtn').addEventListener('click', function() {
             playClickSound();
@@ -2519,7 +2830,6 @@
                         </div>
                     </div>
                 `;
-                // توليد QR لسداد
                 setTimeout(() => {
                     const qrContainer = document.getElementById('sadadQR');
                     if (qrContainer) {
@@ -2574,16 +2884,9 @@
         });
 
         // ============================================================
-        //  10. لوحة التحكم
+        //  13. محرر الموقع - مزامنة وفتح
         // ============================================================
-        document.getElementById('controlPanelBtn').addEventListener('click', function() {
-            if (currentRole !== 'admin') {
-                alert('هذه الصلاحية متاحة لمدير النظام فقط');
-                return;
-            }
-            playClickSound();
-            document.getElementById('controlPanelModal').classList.add('open');
-            // مزامنة الإعدادات الحالية
+        function syncSettingsToModal() {
             document.getElementById('settingsLogoUrl').value = document.getElementById('logoImg').src;
             document.getElementById('settingsOrderNumber').value = document.getElementById('orderNumber').textContent;
             const pct = parseInt(document.getElementById('progressFill').style.width) || 75;
@@ -2594,7 +2897,19 @@
             document.getElementById('settingsLogoSize').value = parseInt(document.getElementById('logoImg').style.width, 10) || 78;
             document.getElementById('settingsLogoSizeVal').textContent = document.getElementById('settingsLogoSize').value;
             document.getElementById('settingsLogoText').value = logoTextValue;
+            document.getElementById('settingsLogoSubText').value = logoSubTextValue;
             setLogoTextVisibilityState(logoTextVisible, false);
+            
+            // مزامنة نصوص الموافقة والقيم
+            document.getElementById('settingsApprovalTitle').value = approvalTitleText;
+            document.getElementById('settingsApprovalSub').value = approvalSubText;
+            document.getElementById('settingsLabelType').value = labelRequestType;
+            document.getElementById('settingsLabelDate').value = labelRequestDate;
+            document.getElementById('settingsLabelCustomer').value = labelCustomerId;
+            document.getElementById('settingsRequestTypeValue').value = requestTypeValue;
+            document.getElementById('settingsRequestDateValue').value = requestDateValue;
+            document.getElementById('settingsCustomerIdValue').value = customerIdValue;
+            
             document.getElementById('settingsCustomerName').value = customerData.name;
             document.getElementById('settingsCustomerId').value = customerData.id;
             document.getElementById('settingsCustomerPhone').value = customerData.phone;
@@ -2611,6 +2926,17 @@
             setPartnerLogosVisibilityState(partnerLogosVisible, false);
             applyPartnerLogosSpeed(partnerLogosSpeed, false);
             document.getElementById('settingsRefundStatus').value = document.getElementById('amountRefundStatus').textContent.trim() === 'مسترد' ? 'refunded' : 'nonrefundable';
+            renderAdminFeeList();
+        }
+
+        document.getElementById('editorNavBtn').addEventListener('click', function() {
+            if (currentRole !== 'admin') {
+                alert('هذه الصلاحية متاحة لمدير النظام فقط');
+                return;
+            }
+            playClickSound();
+            document.getElementById('controlPanelModal').classList.add('open');
+            syncSettingsToModal();
         });
 
         document.getElementById('closeControlPanel').addEventListener('click', function() {
@@ -2623,13 +2949,12 @@
             playClickSound();
             document.getElementById('controlPanelModal').classList.add('open');
             document.getElementById('extraFeeName').focus();
+            syncSettingsToModal();
         });
 
         // ============================================================
-        //  11. إعدادات لوحة التحكم - تطبيق التغييرات
+        //  14. تطبيق الإعدادات من محرر الموقع
         // ============================================================
-
-        // 11a. تغير شعار - رابط
         function applyLogoUrl() {
             const url = document.getElementById('settingsLogoUrl').value.trim();
             if (url) {
@@ -2641,7 +2966,6 @@
             }
         }
 
-        // 11b. تغير شعار - ملف
         function applyLogoFile(event) {
             const file = event.target.files[0];
             if (file) {
@@ -2658,18 +2982,14 @@
             }
         }
 
-        // 11c. تغير لون الموقع
         function applyColor(color, persist = true) {
             document.documentElement.style.setProperty('--primary', color);
-            // تغير الظل
             document.querySelector('.logo-wrap').style.background = color;
-            document.querySelector('.control-panel-btn').style.background = color;
-            // تحديث الألوان الأخرى
+            document.querySelector('.sidebar').style.background = color;
             playClickSound();
             if (persist) saveSettings();
         }
 
-        // 11d. تغير اسم زر تسجيل الخروج
         function applyLogoutText(text, persist = true) {
             document.getElementById('logoutBtn').innerHTML = `<i class="fas fa-sign-out-alt"></i> ${text}`;
             playClickSound();
@@ -2683,7 +3003,6 @@
             if (persist) saveSettings();
         }
 
-        // 11e. صوت الأزرار
         function setSound(btn) {
             const parent = btn.closest('.toggle-group');
             parent.querySelectorAll('button').forEach(b => b.classList.remove('active'));
@@ -2693,7 +3012,6 @@
             saveSettings();
         }
 
-        // 11f. إظهار اسم العضو
         function setMemberToggle(btn) {
             const parent = btn.closest('.toggle-group');
             parent.querySelectorAll('button').forEach(b => b.classList.remove('active'));
@@ -2704,35 +3022,30 @@
             saveSettings();
         }
 
-        // 11g. القوالب
         function setTheme(theme, persist = true) {
             document.body.className = 'template-' + theme;
             document.querySelectorAll('.theme-btns button').forEach(b => b.classList.remove('active-theme'));
             document.querySelector(`.theme-btns button[data-theme="${theme}"]`).classList.add('active-theme');
             currentTheme = theme;
             playClickSound();
-            // تحديث اللون الأساسي في الإعدادات
             const colors = {
-                default: '#2d6a4f',
+                default: '#1b4332',
                 company: '#0099cc',
                 bank: '#0a3d62',
                 company2: '#8d6e3f'
             };
-            document.getElementById('settingsColor').value = colors[theme] || '#2d6a4f';
-            applyColor(colors[theme] || '#2d6a4f', persist);
+            document.getElementById('settingsColor').value = colors[theme] || '#1b4332';
+            applyColor(colors[theme] || '#1b4332', persist);
             if (persist) saveSettings();
         }
 
-        // 11h. تغير رقم الطلب
         function applyOrderNumber(val, persist = true) {
             document.getElementById('orderNumber').textContent = val || '11223344556';
             playClickSound();
-            // تحديث الباركود
             generateQR();
             if (persist) saveSettings();
         }
 
-        // 11i. نسبة الإكمال
         function applyProgress(val, persist = true) {
             const pct = parseInt(val) || 0;
             document.getElementById('progressFill').style.width = pct + '%';
@@ -2763,7 +3076,6 @@
             if (persist) saveSettings();
         }
 
-        // 11j. حالة الدفع
         function applyPaymentStatus(val, persist = true) {
             const statusEl = document.getElementById('feeStatus1');
             const map = {
@@ -2781,9 +3093,7 @@
             if (persist) saveSettings();
         }
 
-        // 11k. طريقة الدفع
         function applyPaymentMethod(val) {
-            // سيتم تطبيقها عند فتح المودال
             playClickSound();
             saveSettings();
         }
@@ -2802,7 +3112,6 @@
             if (persist) saveSettings();
         }
 
-        // 11l. إضافة فاتورة إضافية
         function addExtraFee() {
             const name = document.getElementById('extraFeeName').value.trim();
             const amount = document.getElementById('extraFeeAmount').value.trim();
@@ -2837,15 +3146,14 @@
             list.appendChild(div);
             updateFeeTotals();
             saveFees();
-            // تنظيف الحقول
             document.getElementById('extraFeeName').value = '';
             document.getElementById('extraFeeAmount').value = '';
             document.getElementById('extraFeeNote').value = '';
             playClickSound();
             alert('تم إضافة الفاتورة الإضافية بنجاح');
+            renderAdminFeeList();
         }
 
-        // 11m. حذف فاتورة
         function deleteFee(id) {
             const items = document.querySelectorAll('.fee-item');
             for (const item of items) {
@@ -2859,10 +3167,35 @@
                         updateFeeTotals();
                         saveFees();
                         playClickSound();
+                        renderAdminFeeList();
                     }
                     return;
                 }
             }
+        }
+
+        function renderAdminFeeList() {
+            const container = document.getElementById('adminFeeList');
+            if (!container) return;
+            const items = document.querySelectorAll('#feeList .fee-item');
+            if (items.length === 0) {
+                container.innerHTML = '<div style="color:var(--text-muted);font-weight:600;text-align:center;padding:10px;">لا توجد فواتير مسجلة</div>';
+                return;
+            }
+            let html = '';
+            items.forEach(item => {
+                const id = item.dataset.feeId;
+                const name = item.querySelector('.fee-name')?.textContent || 'فاتورة';
+                const amount = item.querySelector('.fee-amount')?.textContent || '0 ريال';
+                html += `
+                    <div class="admin-fee-row">
+                        <span class="admin-fee-name">${escapeHtml(name)}</span>
+                        <span class="admin-fee-amount">${escapeHtml(amount)}</span>
+                        <button class="admin-fee-delete" onclick="deleteFee(${id})"><i class="fas fa-trash"></i> حذف</button>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
         }
 
         function escapeHtml(value) {
@@ -2899,6 +3232,37 @@
             document.getElementById('invoiceFeeRows').innerHTML = invoiceRows.join('');
         }
 
+        function setFeeStatus(id, status) {
+            const items = document.querySelectorAll('.fee-item');
+            for (const item of items) {
+                if (parseInt(item.dataset.feeId) === id) {
+                    const statusEl = item.querySelector('.fee-status');
+                    const map = {
+                        paid: { text: 'تم التسديد', cls: 'paid' },
+                        unpaid: { text: 'لم يتم التسديد', cls: 'unpaid' },
+                        pending: { text: 'انتظار الدفع', cls: 'pending' },
+                        refunded: { text: 'مسترد', cls: 'paid' }
+                    };
+                    const s = map[status] || map.pending;
+                    statusEl.textContent = s.text;
+                    statusEl.className = 'fee-status ' + s.cls;
+                    if (status === 'refunded') {
+                        document.getElementById('amountRefundStatus').textContent = 'مسترد';
+                    } else {
+                        document.getElementById('amountRefundStatus').textContent = 'غير مسترد';
+                    }
+                    updateFeeTotals();
+                    saveFees();
+                    renderAdminFeeList();
+                    playClickSound();
+                    return;
+                }
+            }
+        }
+
+        // ============================================================
+        //  15. تهيئة عامة
+        // ============================================================
         applyCountdownStyle(countdownStyle, false);
         loadSettings();
         loadFees();
@@ -2907,14 +3271,13 @@
         updateFeeTotals();
 
         // ============================================================
-        //  12. مودال الجلسة (محاكاة)
+        //  16. مودال الجلسة (محاكاة)
         // ============================================================
         document.querySelector('.nav-item[data-section="jalsah"]').addEventListener('click', function() {
             if (currentRole !== 'admin') {
                 alert('إدارة الأجهزة متاحة لمدير النظام فقط');
                 return;
             }
-            // محاكاة ظهور تنبيه "تم دخول جهاز جديد"
             const msg = document.createElement('div');
             msg.style.cssText =
                 'position:fixed;top:50%;right:50%;transform:translate(50%,-50%);background:#fff;padding:30px 50px;border-radius:20px;box-shadow:0 30px 60px rgba(0,0,0,0.2);z-index:9999;text-align:center;max-width:400px;border:4px solid var(--primary);';
@@ -2931,7 +3294,6 @@
             `;
             document.body.appendChild(msg);
             playClickSound();
-            // تشغيل صوت دخول جهاز
             try {
                 const ctx = new(window.AudioContext || window.webkitAudioContext)();
                 const osc = ctx.createOscillator();
@@ -2947,7 +3309,7 @@
         });
 
         // ============================================================
-        //  13. طباعة / تحميل الفاتورة
+        //  17. طباعة / تحميل الفاتورة
         // ============================================================
         function printInvoice() {
             playClickSound();
@@ -2955,7 +3317,7 @@
             const closingTags = '<' + '/body><' + '/html>';
             const printHtml = `
                 <html dir="rtl"><head><meta charset="UTF-8"><title>الفاتورة</title>
-                <style>body{font-family:'Cairo',sans-serif;padding:40px;background:#fff;} .invoice-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #e9ecef;font-weight:600;} .label{color:#6c757d;} .value{color:#1a1a2e;} h2{color:#2d6a4f;}</style>
+                <style>body{font-family:'Cairo',sans-serif;padding:40px;background:#fff;} .invoice-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #e9ecef;font-weight:600;} .label{color:#6c757d;} .value{color:#1a1a2e;} h2{color:#1b4332;}</style>
                 </head><body>
                 <h2><i class="fas fa-file-invoice"></i> الفاتورة</h2>
                 ${content}
@@ -2981,7 +3343,7 @@
             const closingTags = '<' + '/body><' + '/html>';
             const html = `
                 <html dir="rtl"><head><meta charset="UTF-8"><title>الفاتورة</title>
-                <style>body{font-family:'Cairo',sans-serif;padding:40px;background:#fff;} .invoice-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #e9ecef;font-weight:600;} .label{color:#6c757d;} .value{color:#1a1a2e;} h2{color:#2d6a4f;}</style>
+                <style>body{font-family:'Cairo',sans-serif;padding:40px;background:#fff;} .invoice-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #e9ecef;font-weight:600;} .label{color:#6c757d;} .value{color:#1a1a2e;} h2{color:#1b4332;}</style>
                 </head><body>
                 <h2>الفاتورة</h2>
                 ${content}
@@ -2998,7 +3360,7 @@
         }
 
         // ============================================================
-        //  14. إغلاق المودال عند النقر خارجها
+        //  18. إغلاق المودال عند النقر خارجها
         // ============================================================
         document.querySelectorAll('.modal-overlay').forEach(overlay => {
             overlay.addEventListener('click', function(e) {
@@ -3010,12 +3372,10 @@
         });
 
         // ============================================================
-        //  15. تهيئة - تطبيق الإعدادات الافتراضية
+        //  19. حماية أساسية
         // ============================================================
-        // تعيين الحالة الافتراضية للعضو
-        document.getElementById('memberDisplay').style.display = 'flex';
+        document.getElementById('memberDisplay').style.display = 'none';
 
-        // حماية سطحية من النسخ العرضي؛ الحماية الفعلية تتطلب نشر المنطق على خادم.
         document.addEventListener('contextmenu', event => event.preventDefault());
         document.addEventListener('dragstart', event => event.preventDefault());
         document.addEventListener('keydown', event => {
@@ -3028,26 +3388,9 @@
             }
         });
 
-        // تعيين لون الخلفية للشعار (أخضر) - تم بالفعل في الـ CSS
-
-        // ============================================================
-        //  16. حظر الجهاز (محاكاة)
-        // ============================================================
-        // يمكن استدعاؤها من زر الحظر في الجلسة
-
-        console.log('✅ النظام جاهز! جميع الأقسام تعمل.');
-
-        // ============================================================
-        //  17. تفعيل الأزرار الإضافية في السايد بار (طباعة، تحميل..)
-        // ============================================================
-        // تم بالفعل
-
-        // ============================================================
-        //  18. تعديل اسم العضو من لوحة التحكم (متقدم)
-        // ============================================================
-        // يمكن إضافة حقل في لوحة التحكم لتغيير الاسم، لكن لم يطلب صراحة
-        // لكننا نضيف إمكانية بسيطة
-        console.log('💡 يمكن تغيير اسم العضو من خلال متغير customerData.name');
+        console.log('✅ تم تطبيق جميع التعديلات بنجاح.');
+        console.log('✅ يمكن تغيير نصوص الموافقة وقيم معلمات الطلب من محرر الموقع.');
+        console.log('✅ تم جعل نوع الطلب وتاريخ الطلب ورقم العميل في صف واحد.');
     </script>
 
 </body>
