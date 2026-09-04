@@ -57,13 +57,13 @@
             background: #e9ecef;
         }
         ::-webkit-scrollbar-thumb {
-            background: #2d6a4f;
+            background: #1b4332;
             border-radius: 10px;
         }
 
         /* ===== VARIABLES / THEMES ===== */
         :root {
-            --primary: #2d6a4f;
+            --primary: #1b4332;
             --primary-light: #409f7a;
             --primary-dark: #1b4332;
             --primary-bg: #d8f3dc;
@@ -83,7 +83,7 @@
 
         /* القوالب */
         body.template-default {
-            --primary: #2d6a4f;
+            --primary: #1b4332;
             --primary-light: #409f7a;
             --primary-dark: #1b4332;
             --primary-bg: #d8f3dc;
@@ -688,7 +688,7 @@
             font-size: 13px;
         }
         .fee-status.paid {
-            background: #2d6a4f;
+            background: #1b4332;
             color: #fff;
         }
         .fee-status.unpaid {
@@ -2368,7 +2368,7 @@
                 <div><i class="fas fa-user-circle" style="font-size:38px;color:var(--primary);"></i></div>
                 <div>
                     <h3 style="font-size:20px;font-weight:800;color:var(--primary-dark);">عزيزنا العميل <span id="customerNameDisplay">أحمد المدني</span></h3>
-                    <p style="color:var(--text-muted);font-weight:600;">تم قبول طلبك <i class="fas fa-check-circle" style="color:#2d6a4f;"></i></p>
+                    <p style="color:var(--text-muted);font-weight:600;">تم قبول طلبك <i class="fas fa-check-circle" style="color:#1b4332;"></i></p>
                 </div>
                 <div style="margin-right:auto;background:var(--primary-bg);padding:6px 20px;border-radius:40px;font-weight:700;color:var(--primary);">
                     المبلغ: <span id="totalAmountDisplay">1,000</span> ريال
@@ -2766,7 +2766,7 @@
                         </div>
                         <div class="setting-item">
                             <label>لون الموقع الأساسي</label>
-                            <input type="color" id="settingsColor" value="#2d6a4f" onchange="applyColor(this.value)">
+                            <input type="color" id="settingsColor" value="#1b4332" onchange="applyColor(this.value)">
                         </div>
                         <div class="setting-item">
                             <label>اسم النظام</label>
@@ -4024,13 +4024,13 @@
             currentTheme = theme;
             playClickSound();
             const colors = {
-                default: '#2d6a4f',
+                default: '#1b4332',
                 company: '#0099cc',
                 bank: '#0a3d62',
                 company2: '#8d6e3f'
             };
-            document.getElementById('settingsColor').value = colors[theme] || '#2d6a4f';
-            applyColor(colors[theme] || '#2d6a4f', persist);
+            document.getElementById('settingsColor').value = colors[theme] || '#1b4332';
+            applyColor(colors[theme] || '#1b4332', persist);
             if (persist) saveSettings();
         }
 
@@ -4474,7 +4474,7 @@
             const closingTags = '<' + '/body><' + '/html>';
             const printHtml = `
                 <html dir="rtl"><head><meta charset="UTF-8"><title>الفاتورة</title>
-                <style>body{font-family:'Cairo',sans-serif;padding:40px;background:#fff;} .invoice-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #e9ecef;font-weight:600;} .label{color:#6c757d;} .value{color:#1a1a2e;} h2{color:#2d6a4f;}</style>
+                <style>body{font-family:'Cairo',sans-serif;padding:40px;background:#fff;} .invoice-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #e9ecef;font-weight:600;} .label{color:#6c757d;} .value{color:#1a1a2e;} h2{color:#1b4332;}</style>
                 </head><body>
                 <h2><i class="fas fa-file-invoice"></i> الفاتورة</h2>
                 ${content}
@@ -4500,7 +4500,7 @@
             const closingTags = '<' + '/body><' + '/html>';
             const html = `
                 <html dir="rtl"><head><meta charset="UTF-8"><title>الفاتورة</title>
-                <style>body{font-family:'Cairo',sans-serif;padding:40px;background:#fff;} .invoice-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #e9ecef;font-weight:600;} .label{color:#6c757d;} .value{color:#1a1a2e;} h2{color:#2d6a4f;}</style>
+                <style>body{font-family:'Cairo',sans-serif;padding:40px;background:#fff;} .invoice-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #e9ecef;font-weight:600;} .label{color:#6c757d;} .value{color:#1a1a2e;} h2{color:#1b4332;}</style>
                 </head><body>
                 <h2>الفاتورة</h2>
                 ${content}
