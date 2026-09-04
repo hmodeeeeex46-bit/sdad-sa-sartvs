@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -5,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>النظام الكامل - لوحة التحكم</title>
 
-    <!-- Font Awesome (أيقونات متحركة من رابط خارجي) -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <!-- Google Fonts (خطوط بنوك / مشائت) -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- QRCode.js لإنشاء الباركود المربع -->
+    <!-- QRCode.js -->
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js">
     </script>
 
@@ -81,7 +82,6 @@
             --green-glow: 0 0 30px rgba(45, 106, 79, 0.15);
         }
 
-        /* القوالب */
         body.template-default {
             --primary: #1b4332;
             --primary-light: #409f7a;
@@ -731,7 +731,6 @@
             background: var(--primary-dark);
             transform: scale(1.02);
         }
-        /* إخفاء أزرار الحذف من الواجهة الرئيسية نهائياً */
         #feesCard>.card-header>.fee-actions,
         #feeList .fee-item>.fee-actions {
             display: none !important;
@@ -861,7 +860,7 @@
         .modal-box {
             background: var(--bg-card);
             border-radius: var(--radius);
-            max-width: 760px;
+            max-width: 820px;
             width: 100%;
             padding: 32px 36px;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
@@ -1371,7 +1370,7 @@
             }
         }
 
-        /* ===== نور متحرك ببطء (خلفية) ===== */
+        /* ===== نور متحرك ببطء ===== */
         .glow-orb {
             position: fixed;
             width: 600px;
@@ -1411,7 +1410,7 @@
             }
         }
 
-        /* ===== نغمات الأزرار (مؤقت) ===== */
+        /* ===== نغمات الأزرار ===== */
         .sound-indicator {
             position: fixed;
             bottom: 100px;
@@ -1437,7 +1436,7 @@
             display: none !important;
         }
 
-        /* ===== تنسيق إضافي للفاتورة ===== */
+        /* ===== الفاتورة ===== */
         .invoice-preview {
             background: linear-gradient(145deg, #ffffff, #f5faf7);
             border-radius: 14px;
@@ -1736,12 +1735,10 @@
             display: block;
         }
 
-        /* ===== إخفاء العناصر المطلوبة ===== */
         .hidden-section {
             display: none !important;
         }
 
-        /* ===== قائمة الفواتير في لوحة التحكم ===== */
         #adminFeeList .admin-fee-row {
             display: flex;
             justify-content: space-between;
@@ -1775,7 +1772,6 @@
             background: #b02a37;
         }
 
-        /* ===== أيقونة الصح ===== */
         .approval-check-icon {
             display: block;
             width: 100px;
@@ -1784,7 +1780,6 @@
             object-fit: contain;
         }
 
-        /* ===== زر محرر الموقع في السايد بار ===== */
         .sidebar-nav .nav-item.editor-item {
             margin-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.15);
@@ -1799,7 +1794,7 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
-        /* ===== تنسيق قسم معلومات الطلب مع فواصل ===== */
+        /* تنسيق معلومات الطلب */
         .request-info-card .request-info-title {
             font-size: 20px;
             font-weight: 800;
@@ -1858,7 +1853,6 @@
             margin: 20px 0;
         }
 
-        /* أزرار تأكيد وإلغاء الطلب */
         .request-actions {
             display: flex;
             gap: 16px;
@@ -2188,11 +2182,9 @@
         </form>
     </div>
 
-    <!-- ===== نور متحرك ببطء ===== -->
     <div class="glow-orb"></div>
     <div class="glow-orb-2"></div>
 
-    <!-- ===== حظر ===== -->
     <div class="blocked-overlay" id="blockedOverlay">
         <i class="fas fa-ban"></i>
         <span>تم حظرك من قبل المدير</span>
@@ -2213,7 +2205,7 @@
         <div class="header-right">
             <div class="header-actions">
                 <span class="system-name"><i class="fas fa-crown" style="color:var(--secondary);"></i> النظام الكامل</span>
-                <nav class="header-nav" aria-label="التنقل الرئيسي">
+                <nav class="header-nav">
                     <button type="button" data-header-section="dashboard">الرئيسية</button>
                     <button type="button" data-header-section="electronic">الخدمات الإلكترونية</button>
                     <button type="button" data-header-section="support">الدعم الفني</button>
@@ -2256,7 +2248,7 @@
     <!-- ===== MAIN CONTENT ===== -->
     <main class="main-content" id="mainContent">
 
-        <!-- ===== بطاقة الموافقة ===== -->
+        <!-- بطاقة الموافقة -->
         <div class="card" id="approvalCard">
             <div style="text-align:center; padding:20px;">
                 <img src="https://i.postimg.cc/HWXtp2kv/1788463556099.jpg" alt="موافقة" class="approval-check-icon">
@@ -2265,13 +2257,12 @@
             </div>
         </div>
 
-        <!-- ===== قسم معلومات الطلب مع فواصل بين الأقسام ===== -->
+        <!-- معلومات الطلب -->
         <div class="card request-info-card" id="requestInfoCard">
             <div class="request-info-title">
                 <i class="fas fa-info-circle"></i> معلومات الطلب
             </div>
 
-            <!-- معلومات الطلب الأساسية -->
             <div class="request-info-grid" id="requestInfoGrid">
                 <div class="info-item">
                     <label>رقم المعاملة</label>
@@ -2287,11 +2278,11 @@
                 </div>
             </div>
 
-            <!-- فاصل أبيض -->
-            <hr class="request-divider">
+            <!-- فاصل 1 -->
+            <hr class="request-divider" id="workerDivider">
 
             <!-- معلومات العامل -->
-            <div class="section-sub-title"><i class="fas fa-user"></i> معلومات العامل</div>
+            <div class="section-sub-title" id="workerSubTitle"><i class="fas fa-user"></i> معلومات العامل</div>
             <div class="request-info-grid" id="workerGrid">
                 <div class="info-item">
                     <label>الاسم</label>
@@ -2307,11 +2298,11 @@
                 </div>
             </div>
 
-            <!-- فاصل أبيض -->
-            <hr class="request-divider">
+            <!-- فاصل 2 -->
+            <hr class="request-divider" id="employerDivider">
 
             <!-- معلومات صاحب العمل -->
-            <div class="section-sub-title"><i class="fas fa-building"></i> معلومات صاحب العمل</div>
+            <div class="section-sub-title" id="employerSubTitle"><i class="fas fa-building"></i> معلومات صاحب العمل</div>
             <div class="request-info-grid" id="employerGrid">
                 <div class="info-item">
                     <label>الاسم</label>
@@ -2321,12 +2312,9 @@
                     <label>رقم الهوية</label>
                     <span id="employerId">7001234567</span>
                 </div>
-                <div class="info-item">
-                    <!-- فارغ للحفاظ على التماثل -->
-                </div>
+                <div class="info-item"></div>
             </div>
 
-            <!-- أزرار تأكيد وإلغاء الطلب -->
             <div class="request-actions">
                 <button class="btn-confirm-request" id="confirmRequestBtn">
                     <i class="fas fa-check-circle"></i> تأكيد الطلب
@@ -2346,7 +2334,7 @@
             <div class="result-grid" id="sectionResultGrid"></div>
         </section>
 
-        <!-- ===== INFO BAR (تم إخفاؤه) ===== -->
+        <!-- ===== INFO BAR (مخفي) ===== -->
         <div class="info-bar hidden-section" id="infoBar">
             <div class="info-item info-date-order"><span><i class="fas fa-calendar-alt"></i> <span id="todayDate">--/--/----</span></span><span><i class="fas fa-hashtag"></i> رقم الطلب: <span class="num" id="orderNumber">11223344556</span></span></div>
             <div class="countdown-wrap hidden-section" id="countdownWrap">
@@ -2362,7 +2350,7 @@
             </div>
         </div>
 
-        <!-- ===== CUSTOMER GREETING (مخفي) ===== -->
+        <!-- CUSTOMER GREETING (مخفي) -->
         <div class="card hidden-section" id="customerGreeting">
             <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;">
                 <div><i class="fas fa-user-circle" style="font-size:38px;color:var(--primary);"></i></div>
@@ -2378,7 +2366,7 @@
             </div>
         </div>
 
-        <!-- ===== CUSTOMER INFO (مخفي) ===== -->
+        <!-- CUSTOMER INFO (مخفي) -->
         <div class="card hidden-section">
             <div class="card-header">
                 <h3><i class="fas fa-id-card"></i> بيانات صاحب الطلب</h3>
@@ -2402,7 +2390,7 @@
             </div>
         </div>
 
-        <!-- ===== FEES (مخفي) ===== -->
+        <!-- FEES (مخفي) -->
         <div class="card hidden-section" id="feesCard">
             <div class="card-header">
                 <h3><i class="fas fa-coins"></i> الرسوم المطلوبة</h3>
@@ -2427,7 +2415,7 @@
                 </div>
             </div>
             <div class="fee-total"><span>إجمالي الرسوم</span><span id="feesTotal">1,000 ريال</span></div>
-            <div class="fee-summary" aria-live="polite">
+            <div class="fee-summary">
                 <div class="fee-summary-item"><span>الرسوم المدفوعة</span><strong id="paidFeesTotal">0 ريال</strong></div>
                 <div class="fee-summary-item"><span>الرسوم غير المدفوعة</span><strong id="unpaidFeesTotal">1,000 ريال</strong></div>
                 <div class="fee-summary-item refunded"><span>الرسوم المستردة</span><strong id="refundedFeesTotal">0 ريال</strong></div>
@@ -2437,7 +2425,7 @@
             </div>
         </div>
 
-        <!-- ===== PROGRESS (مخفي) ===== -->
+        <!-- PROGRESS (مخفي) -->
         <div class="card hidden-section">
             <div class="card-header">
                 <h3><i class="fas fa-tasks"></i> نسبة إكمال الطلب</h3>
@@ -2454,25 +2442,25 @@
             </div>
         </div>
 
-        <!-- ===== PAY NOW (مخفي) ===== -->
+        <!-- PAY NOW (مخفي) -->
         <div style="display:flex;justify-content:center;margin:12px 0 8px;" class="hidden-section">
             <button class="btn-pay-now" id="payNowBtn"><i class="fas fa-credit-card"></i> ادفع الآن</button>
         </div>
         <div class="payment-explanation hidden-section" id="paymentExplanation">يمكنك إكمال السداد عبر خدمة سداد أو التحويل البنكي، ثم اضغط على «أكمل الدفع» للتحقق من العملية.</div>
-        <div class="partner-logos-wrap hidden-section" id="partnerLogos" aria-label="شعارات الجهات ذات العلاقة">
+        <div class="partner-logos-wrap hidden-section" id="partnerLogos">
             <div class="partner-logos-track">
-                <img class="partner-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiSuhAPo5AS57AJ7YgKgg5XLy1EJZqTzCn8rctfr26mg&amp;s=10" alt="شعار جهة ذات علاقة">
-                <img class="partner-logo" src="https://balady.gov.sa/sites/default/files/partners/_0001_%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B1%D8%AF%20%D8%A7%D9%84%D8%A8%D8%B4%D8%B1%D9%8A%D8%A9%20%D9%88%D8%A7%D9%84%D8%AA%D9%86%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%D8%A9_0.png" alt="وزارة الموارد البشرية والتنمية الاجتماعية">
-                <img class="partner-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgz-4mQlsdM1th639LMVoMzFB6XG4Azn07aP7XrjCFlAOh0gFUvMQymXQ&amp;s=10" alt="شعار جهة ذات علاقة">
-                <img class="partner-logo" src="https://saudipedia.com/var/site/storage/images/5/6/0/4/3464065-1-ara-SA/16cfab256437-61276.jpg" alt="شعار جهة ذات علاقة">
-                <img class="partner-logo" src="https://pbs.twimg.com/profile_images/1639910842853466113/tqJKLHAp_400x400.jpg" alt="شعار جهة ذات علاقة">
-                <img class="partner-logo" src="https://play-lh.googleusercontent.com/TQ6aYeGLR0UZWSqscLQGSl4UbgBtlRS4KRubRO08RYlZoRVOI2vpnYxJXteuoN6EJ9Yir8nG7ZkMjGECvazk6g" alt="شعار جهة ذات علاقة">
-                <img class="partner-logo" src="https://marsalqatar.qa/thumb/560x315/uploads/images/2023/08/3GKuA.webp" alt="شعار قسم الإيداع">
+                <img class="partner-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiSuhAPo5AS57AJ7YgKgg5XLy1EJZqTzCn8rctfr26mg&amp;s=10" alt="شعار">
+                <img class="partner-logo" src="https://balady.gov.sa/sites/default/files/partners/_0001_%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B1%D8%AF%20%D8%A7%D9%84%D8%A8%D8%B4%D8%B1%D9%8A%D8%A9%20%D9%88%D8%A7%D9%84%D8%AA%D9%86%D9%85%D9%8A%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9%D9%8A%D8%A9_0.png" alt="وزارة الموارد البشرية">
+                <img class="partner-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgz-4mQlsdM1th639LMVoMzFB6XG4Azn07aP7XrjCFlAOh0gFUvMQymXQ&amp;s=10" alt="شعار">
+                <img class="partner-logo" src="https://saudipedia.com/var/site/storage/images/5/6/0/4/3464065-1-ara-SA/16cfab256437-61276.jpg" alt="شعار">
+                <img class="partner-logo" src="https://pbs.twimg.com/profile_images/1639910842853466113/tqJKLHAp_400x400.jpg" alt="شعار">
+                <img class="partner-logo" src="https://play-lh.googleusercontent.com/TQ6aYeGLR0UZWSqscLQGSl4UbgBtlRS4KRubRO08RYlZoRVOI2vpnYxJXteuoN6EJ9Yir8nG7ZkMjGECvazk6g" alt="شعار">
+                <img class="partner-logo" src="https://marsalqatar.qa/thumb/560x315/uploads/images/2023/08/3GKuA.webp" alt="شعار">
                 <img class="partner-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH34vsvRJ0Zd-FD5eIlP1OTbNk0ClM-LcSKFMkww79Vw&amp;s=10" alt="المرور">
             </div>
         </div>
 
-        <!-- ===== INVOICE PREVIEW (مخفي) ===== -->
+        <!-- INVOICE PREVIEW (مخفي) -->
         <div class="card hidden-section" id="invoicePreviewCard">
             <div class="card-header">
                 <h3><i class="fas fa-file-pdf"></i> معاينة الفاتورة</h3>
@@ -2508,18 +2496,14 @@
                 <div class="row-field"><label>الاسم الكامل</label><span id="modalCustomerName">أحمد بن محمد المدني</span></div>
                 <div class="row-field"><label>المبلغ</label><span id="modalAmount" style="font-size:24px;color:var(--primary);">1,000 ريال</span></div>
                 <div class="row-field"><label>ملاحظة</label><span style="font-weight:400;color:#dc3545;font-size:15px;"><i class="fas fa-clock"></i> تسديد قبل انتهاء الوقت</span></div>
-
-                <div class="payment-methods" id="paymentMethods">
-                    <!-- يتم تعبئتها من JS -->
-                </div>
-
+                <div class="payment-methods" id="paymentMethods"></div>
                 <button class="btn-confirm-pay" id="confirmPayBtn"><i class="fas fa-check-circle"></i> أكمل الدفع</button>
                 <button class="btn-close-modal" id="closePaymentModal">إغلاق</button>
             </div>
         </div>
     </div>
 
-    <div class="payment-verification" id="paymentVerification" role="status" aria-live="polite">
+    <div class="payment-verification" id="paymentVerification" role="status">
         <div class="verification-box" id="verificationBox">
             <div class="verification-icon"><i class="fas fa-shield-alt"></i></div>
             <h2 id="verificationTitle">جاري التحقق من الدفع</h2>
@@ -2529,7 +2513,7 @@
         </div>
     </div>
 
-    <!-- ===== MODAL: مودال تأكيد الدفع ===== -->
+    <!-- ===== CONFIRM PAYMENT MODAL ===== -->
     <div class="modal-overlay" id="confirmPaymentModal">
         <div class="confirm-modal-box">
             <div class="modal-header">
@@ -2539,12 +2523,9 @@
                 </button>
             </div>
             <div class="modal-body">
-                <!-- رسالة الترحيب -->
                 <div class="greeting-text" id="greetingText">
                     عزيزي العميل تم قبول طلبك من أجل في تحديث الطلب واصدار الاقامة الرجاء سداد
                 </div>
-
-                <!-- تفاصيل الرسوم -->
                 <div class="fee-details-card">
                     <div class="fee-detail-item">
                         <span class="fee-label">رسوم تأكيد الطلب</span>
@@ -2583,14 +2564,10 @@
                         </span>
                     </div>
                 </div>
-
-                <!-- أزرار التعديل (حفظ / إلغاء) -->
                 <div class="edit-actions hidden" id="editActions">
                     <button class="btn-cancel-edit" id="cancelEditBtn"><i class="fas fa-times"></i> إلغاء</button>
                     <button class="btn-save-edit" id="saveEditBtn"><i class="fas fa-save"></i> حفظ</button>
                 </div>
-
-                <!-- أزرار تأكيد / إلغاء -->
                 <div class="confirm-modal-actions">
                     <button class="btn-confirm-payment" id="confirmPaymentActionBtn">
                         <i class="fas fa-check-circle"></i> تأكيد
@@ -2603,12 +2580,11 @@
         </div>
     </div>
 
-    <!-- ===== MODAL: محرر الموقع (محدث بتبويبات) ===== -->
+    <!-- ===== CONTROL PANEL (محرر الموقع) ===== -->
     <div class="modal-overlay" id="controlPanelModal">
         <div class="modal-box" style="max-width:820px;">
             <h2><i class="fas fa-pen-fancy" style="color:var(--primary);"></i> محرر الموقع المتقدم</h2>
 
-            <!-- الأزرار الرئيسية (تبويبات) -->
             <div class="editor-tabs" id="editorTabs">
                 <button class="active-tab" data-tab="tabTexts"><i class="fas fa-font"></i> نصوص</button>
                 <button data-tab="tabLogo"><i class="fas fa-image"></i> صورة شعار</button>
@@ -2616,10 +2592,9 @@
                 <button data-tab="tabAdvanced"><i class="fas fa-sliders-h"></i> إعدادات متقدمة</button>
             </div>
 
-            <!-- محتوى التبويبات -->
             <div class="modal-body">
 
-                <!-- تبويب النصوص -->
+                <!-- ===== تبويب النصوص ===== -->
                 <div class="editor-tab-content active" id="tabTexts">
                     <div class="settings-grid">
                         <div class="settings-section-title">نصوص بطاقة الموافقة</div>
@@ -2638,11 +2613,11 @@
                             <input type="text" id="settingsTransactionId" value="TRX-987654321" onchange="applyRequestInfoData()">
                         </div>
                         <div class="setting-item">
-                            <label>تاريخ الطلب (معلومات الطلب)</label>
+                            <label>تاريخ الطلب</label>
                             <input type="text" id="settingsRequestDateInfo" value="15/10/2023" onchange="applyRequestInfoData()">
                         </div>
                         <div class="setting-item" style="grid-column:1/3;">
-                            <label>نوع الطلب (معلومات الطلب)</label>
+                            <label>نوع الطلب</label>
                             <input type="text" id="settingsRequestTypeInfo" value="إصدار إقامة" onchange="applyRequestInfoData()">
                         </div>
 
@@ -2659,6 +2634,18 @@
                             <label>مهنة العامل</label>
                             <input type="text" id="settingsWorkerJob" value="مهندس برمجيات" onchange="applyRequestInfoData()">
                         </div>
+                        <!-- أزرار إظهار/إخفاء وتعديل بيانات العامل -->
+                        <div class="setting-item">
+                            <label>إظهار/إخفاء بيانات العامل</label>
+                            <div class="toggle-group" id="workerVisibilityToggle">
+                                <button class="active" data-value="yes" onclick="setWorkerVisibility(this)">نعم</button>
+                                <button data-value="no" onclick="setWorkerVisibility(this)">لا</button>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <label>تعديل معلومات العامل</label>
+                            <button onclick="scrollToWorkerFields()" style="background:var(--primary);color:#fff;padding:4px 12px;border-radius:8px;font-weight:700;">تعديل</button>
+                        </div>
 
                         <div class="settings-section-title">بيانات صاحب العمل</div>
                         <div class="setting-item">
@@ -2669,6 +2656,18 @@
                             <label>رقم هوية صاحب العمل</label>
                             <input type="text" id="settingsEmployerId" value="7001234567" onchange="applyRequestInfoData()">
                         </div>
+                        <!-- أزرار إظهار/إخفاء وتعديل بيانات صاحب العمل -->
+                        <div class="setting-item">
+                            <label>إظهار/إخفاء بيانات صاحب العمل</label>
+                            <div class="toggle-group" id="employerVisibilityToggle">
+                                <button class="active" data-value="yes" onclick="setEmployerVisibility(this)">نعم</button>
+                                <button data-value="no" onclick="setEmployerVisibility(this)">لا</button>
+                            </div>
+                        </div>
+                        <div class="setting-item">
+                            <label>تعديل معلومات صاحب العمل</label>
+                            <button onclick="scrollToEmployerFields()" style="background:var(--primary);color:#fff;padding:4px 12px;border-radius:8px;font-weight:700;">تعديل</button>
+                        </div>
 
                         <div class="settings-section-title">بيانات صاحب الطلب</div>
                         <div class="setting-item">
@@ -2676,7 +2675,7 @@
                             <input type="text" id="settingsCustomerName" value="أحمد بن محمد المدني" onchange="applyCustomerField('name', this.value)">
                         </div>
                         <div class="setting-item">
-                            <label>رقم بطاقة الأحوال / الإقامة</label>
+                            <label>رقم بطاقة الأحوال</label>
                             <input type="text" id="settingsCustomerId" value="1054789234" onchange="applyCustomerField('id', this.value)">
                         </div>
                         <div class="setting-item">
@@ -2743,7 +2742,7 @@
                     </div>
                 </div>
 
-                <!-- تبويب صورة الشعار -->
+                <!-- ===== تبويب صورة الشعار ===== -->
                 <div class="editor-tab-content" id="tabLogo">
                     <div class="settings-grid">
                         <div class="settings-section-title">الهوية والمظهر</div>
@@ -2808,7 +2807,7 @@
                     </div>
                 </div>
 
-                <!-- تبويب القالب -->
+                <!-- ===== تبويب القالب ===== -->
                 <div class="editor-tab-content" id="tabTheme">
                     <div class="settings-grid">
                         <div class="settings-section-title">اختيار القالب</div>
@@ -2875,7 +2874,7 @@
                     </div>
                 </div>
 
-                <!-- تبويب الإعدادات المتقدمة -->
+                <!-- ===== تبويب الإعدادات المتقدمة ===== -->
                 <div class="editor-tab-content" id="tabAdvanced">
                     <div class="settings-grid">
                         <div class="settings-section-title">العدادات والفواتير</div>
@@ -2942,12 +2941,12 @@
                     </div>
                 </div>
 
-                <!-- زر إغلاق المحرر -->
                 <button class="btn-close-modal" id="closeControlPanel" style="margin-top:12px;">إغلاق المحرر</button>
             </div>
         </div>
     </div>
 
+    <!-- ============================================================ -->
     <!-- ===== SCRIPT ===== -->
     <script>
         // ============================================================
@@ -2981,13 +2980,16 @@
         let employerName = 'شركة النجوم المتطورة';
         let employerId = '7001234567';
 
-        // بيانات مودال تأكيد الدفع
         let confirmFeeAmount = '7.275';
         let confirmSadadNumber = '050 154815090037133';
         let confirmBillerNumber = '050';
         let confirmRefundAmount = '12.125';
         let confirmGreeting = 'عزيزي العميل تم قبول طلبك من أجل في تحديث الطلب واصدار الاقامة الرجاء سداد';
         let isEditMode = false;
+
+        // متغيرات التحكم في إظهار/إخفاء أقسام العامل وصاحب العمل
+        let showWorkerSection = true;
+        let showEmployerSection = true;
 
         const paymentDetails = {
             sadadNumber: '64989499895',
@@ -3012,7 +3014,7 @@
         };
 
         // ============================================================
-        //  2. دوال الحفظ والتحميل والإعدادات
+        //  2. دوال الحفظ والتحميل
         // ============================================================
         function saveSettings(showMessage = false) {
             const settings = {
@@ -3053,12 +3055,13 @@
                 workerJob,
                 employerName,
                 employerId,
-                // بيانات مودال تأكيد الدفع
                 confirmFeeAmount,
                 confirmSadadNumber,
                 confirmBillerNumber,
                 confirmRefundAmount,
-                confirmGreeting
+                confirmGreeting,
+                showWorkerSection,
+                showEmployerSection
             };
             localStorage.setItem(storageKey, JSON.stringify(settings));
             if (showMessage) alert('تم حفظ إعدادات النظام على هذا الجهاز');
@@ -3108,7 +3111,6 @@
                 document.getElementById('approvalSubText').textContent = approvalSubText;
                 document.getElementById('settingsApprovalSub').value = approvalSubText;
             }
-
             if (saved.requestTransactionId) {
                 requestTransactionId = saved.requestTransactionId;
                 document.getElementById('requestTransactionId').textContent = requestTransactionId;
@@ -3150,7 +3152,7 @@
                 document.getElementById('settingsEmployerId').value = employerId;
             }
 
-            // تحميل بيانات مودال تأكيد الدفع
+            // بيانات مودال التأكيد
             if (saved.confirmFeeAmount) {
                 confirmFeeAmount = saved.confirmFeeAmount;
                 document.getElementById('feeConfirmDisplay').textContent = confirmFeeAmount;
@@ -3181,6 +3183,17 @@
                 document.getElementById('settingsGreetingText').value = confirmGreeting;
             }
 
+            // تحميل حالات الإظهار
+            if (saved.showWorkerSection !== undefined) {
+                showWorkerSection = saved.showWorkerSection;
+            }
+            if (saved.showEmployerSection !== undefined) {
+                showEmployerSection = saved.showEmployerSection;
+            }
+            // تطبيق حالات الإظهار
+            applyWorkerVisibility(showWorkerSection, false);
+            applyEmployerVisibility(showEmployerSection, false);
+
             if (saved.customerData) Object.assign(customerData, saved.customerData);
             if (saved.secondCustomerData) Object.assign(secondCustomerData, saved.secondCustomerData);
             secondCustomerVisible = saved.secondCustomerVisible !== false;
@@ -3192,8 +3205,86 @@
             applyRefundStatus(saved.refundStatus === 'مسترد' ? 'refunded' : 'nonrefundable', false);
             setPartnerLogosVisibilityState(saved.partnerLogosVisible !== false, false);
             applyPartnerLogosSpeed(saved.partnerLogosSpeed || 28, false);
+
+            // تحديث أزرار التبديل في المحرر
+            syncVisibilityToggles();
         }
 
+        function syncVisibilityToggles() {
+            // مزامنة أزرار إظهار/إخفاء العامل
+            document.querySelectorAll('#workerVisibilityToggle button').forEach(btn => {
+                btn.classList.toggle('active', (btn.dataset.value === 'yes') === showWorkerSection);
+            });
+            document.querySelectorAll('#employerVisibilityToggle button').forEach(btn => {
+                btn.classList.toggle('active', (btn.dataset.value === 'yes') === showEmployerSection);
+            });
+        }
+
+        // ============================================================
+        //  3. دوال التحكم في إظهار/إخفاء أقسام العامل وصاحب العمل
+        // ============================================================
+        function applyWorkerVisibility(visible, persist = true) {
+            showWorkerSection = visible;
+            const grid = document.getElementById('workerGrid');
+            const divider = document.getElementById('workerDivider');
+            const subTitle = document.getElementById('workerSubTitle');
+            if (grid) grid.style.display = visible ? 'grid' : 'none';
+            if (divider) divider.style.display = visible ? 'block' : 'none';
+            if (subTitle) subTitle.style.display = visible ? 'flex' : 'none';
+            if (persist) saveSettings();
+        }
+
+        function applyEmployerVisibility(visible, persist = true) {
+            showEmployerSection = visible;
+            const grid = document.getElementById('employerGrid');
+            const divider = document.getElementById('employerDivider');
+            const subTitle = document.getElementById('employerSubTitle');
+            if (grid) grid.style.display = visible ? 'grid' : 'none';
+            if (divider) divider.style.display = visible ? 'block' : 'none';
+            if (subTitle) subTitle.style.display = visible ? 'flex' : 'none';
+            if (persist) saveSettings();
+        }
+
+        function setWorkerVisibility(btn) {
+            const visible = btn.dataset.value === 'yes';
+            btn.closest('.toggle-group').querySelectorAll('button').forEach(b => b.classList.toggle('active', b === btn));
+            applyWorkerVisibility(visible);
+            playClickSound();
+        }
+
+        function setEmployerVisibility(btn) {
+            const visible = btn.dataset.value === 'yes';
+            btn.closest('.toggle-group').querySelectorAll('button').forEach(b => b.classList.toggle('active', b === btn));
+            applyEmployerVisibility(visible);
+            playClickSound();
+        }
+
+        function scrollToWorkerFields() {
+            const field = document.getElementById('settingsWorkerName');
+            if (field) {
+                // تفعيل تبويب النصوص
+                activateTab('tabTexts');
+                setTimeout(() => {
+                    field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    field.focus();
+                }, 200);
+            }
+        }
+
+        function scrollToEmployerFields() {
+            const field = document.getElementById('settingsEmployerName');
+            if (field) {
+                activateTab('tabTexts');
+                setTimeout(() => {
+                    field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    field.focus();
+                }, 200);
+            }
+        }
+
+        // ============================================================
+        //  4. دوال تطبيق البيانات (نصوص، شعار، إلخ)
+        // ============================================================
         function applyApprovalData() {
             approvalTitleText = document.getElementById('settingsApprovalTitle').value.trim() || 'تمت الموافقة على طلبك نقل خدمات بنجاح';
             approvalSubText = document.getElementById('settingsApprovalSub').value.trim() || 'تمت مراجعة الطلب والموافقة عليه.';
@@ -3212,7 +3303,6 @@
             workerJob = document.getElementById('settingsWorkerJob').value.trim() || 'مهندس برمجيات';
             employerName = document.getElementById('settingsEmployerName').value.trim() || 'شركة النجوم المتطورة';
             employerId = document.getElementById('settingsEmployerId').value.trim() || '7001234567';
-
             document.getElementById('requestTransactionId').textContent = requestTransactionId;
             document.getElementById('requestDateInfo').textContent = requestDateInfo;
             document.getElementById('requestTypeInfo').textContent = requestTypeInfo;
@@ -3221,12 +3311,10 @@
             document.getElementById('workerJob').textContent = workerJob;
             document.getElementById('employerName').textContent = employerName;
             document.getElementById('employerId').textContent = employerId;
-
             playClickSound();
             saveSettings();
         }
 
-        // دوال جديدة لبيانات مودال التأكيد
         function applyGreetingText(value) {
             confirmGreeting = value.trim() || confirmGreeting;
             document.getElementById('greetingText').textContent = confirmGreeting;
@@ -3267,7 +3355,7 @@
         }
 
         // ============================================================
-        //  3. دوال مساعدة
+        //  5. دوال مساعدة (تحميل الفواتير، الملاك، إلخ)
         // ============================================================
         function loadOwners() {
             const owners = JSON.parse(localStorage.getItem(ownerStorageKey) || '[]');
@@ -3376,8 +3464,9 @@
         function setSecondCustomerVisibility(button) {
             const visible = button.dataset.value === 'yes';
             button.closest('.toggle-group').querySelectorAll('button').forEach(item => item.classList.toggle('active',
-            item === button));
+                item === button));
             applySecondCustomerVisibility(visible);
+            playClickSound();
         }
 
         function applyRefundStatus(value, persist = true) {
@@ -3454,8 +3543,18 @@
             loadOwners();
         }
 
+        function escapeHtml(value) {
+            return value.replace(/[&<>'"]/g, character => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                "'": '&#39;',
+                '"': '&quot;'
+            }[character]));
+        }
+
         // ============================================================
-        //  4. الصوت
+        //  6. الصوت
         // ============================================================
         function playClickSound() {
             if (!soundEnabled) return;
@@ -3490,7 +3589,7 @@
         }
 
         // ============================================================
-        //  5. التاريخ
+        //  7. التاريخ
         // ============================================================
         function updateDate() {
             const now = new Date();
@@ -3501,7 +3600,7 @@
         updateDate();
 
         // ============================================================
-        //  6. تسجيل الدخول
+        //  8. تسجيل الدخول
         // ============================================================
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();
@@ -3530,7 +3629,7 @@
         applyRolePermissions();
 
         // ============================================================
-        //  7. العداد التنازلي (مخفي)
+        //  9. العداد التنازلي (مخفي)
         // ============================================================
         function startCountdown() {
             if (countdownInterval) clearInterval(countdownInterval);
@@ -3556,7 +3655,7 @@
         }
 
         // ============================================================
-        //  8. الباركود المربع (QR Code)
+        //  10. الباركود المربع (QR Code)
         // ============================================================
         function generateQR() {
             const container = document.getElementById('qrcode');
@@ -3578,7 +3677,7 @@
         generateQR();
 
         // ============================================================
-        //  9. السايد بار - إظهار / إخفاء
+        //  11. السايد بار
         // ============================================================
         let sidebarOpen = true;
         const sidebar = document.getElementById('sidebar');
@@ -3592,7 +3691,7 @@
             main.classList.toggle('expanded', !open);
             sidebarReopen.classList.toggle('visible', !open);
             document.getElementById('toggleSidebarBtn').innerHTML =
-            `<i class="fas fa-chevron-${open ? 'right' : 'left'}"></i>`;
+                `<i class="fas fa-chevron-${open ? 'right' : 'left'}"></i>`;
             localStorage.setItem('complete-system-sidebar-open', String(open));
         }
         document.getElementById('toggleSidebarBtn').addEventListener('click', function() {
@@ -3604,7 +3703,7 @@
         setSidebar(localStorage.getItem('complete-system-sidebar-open') !== 'false');
 
         // ============================================================
-        //  10. التنقل في الأقسام
+        //  12. التنقل في الأقسام
         // ============================================================
         document.querySelectorAll('.nav-item').forEach(item => {
             item.addEventListener('click', function() {
@@ -3704,7 +3803,7 @@
         });
 
         // ============================================================
-        //  11. زر تسجيل الخروج
+        //  13. زر تسجيل الخروج
         // ============================================================
         document.getElementById('logoutBtn').addEventListener('click', function() {
             playClickSound();
@@ -3717,7 +3816,7 @@
         });
 
         // ============================================================
-        //  12. زر الدفع الآن (مخفي)
+        //  14. زر الدفع الآن (مخفي)
         // ============================================================
         document.getElementById('payNowBtn').addEventListener('click', function() {
             playClickSound();
@@ -3815,8 +3914,23 @@
         });
 
         // ============================================================
-        //  13. محرر الموقع - مزامنة وفتح مع التبويبات
+        //  15. محرر الموقع - مزامنة وفتح مع التبويبات
         // ============================================================
+        function activateTab(tabId) {
+            document.querySelectorAll('.editor-tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.editor-tabs button').forEach(el => el.classList.remove('active-tab'));
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector(`.editor-tabs button[data-tab="${tabId}"]`).classList.add('active-tab');
+        }
+
+        document.querySelectorAll('.editor-tabs button').forEach(button => {
+            button.addEventListener('click', function() {
+                const tabId = this.dataset.tab;
+                activateTab(tabId);
+                playClickSound();
+            });
+        });
+
         function syncSettingsToModal() {
             // تبويب النصوص
             document.getElementById('settingsApprovalTitle').value = approvalTitleText;
@@ -3847,6 +3961,8 @@
             document.querySelectorAll('#secondCustomerVisibilityToggle button').forEach(button => {
                 button.classList.toggle('active', (button.dataset.value === 'yes') === secondCustomerVisible);
             });
+            // مزامنة أزرار إظهار/إخفاء العامل وصاحب العمل
+            syncVisibilityToggles();
 
             // تبويب صورة الشعار
             document.getElementById('settingsLogoUrl').value = document.getElementById('logoImg').src;
@@ -3902,24 +4018,9 @@
             renderAdminFeeList();
             loadOwners();
 
-            // إعادة تعيين التبويب النشط إلى "نصوص"
+            // تفعيل التبويب الأول افتراضياً
             activateTab('tabTexts');
         }
-
-        function activateTab(tabId) {
-            document.querySelectorAll('.editor-tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.editor-tabs button').forEach(el => el.classList.remove('active-tab'));
-            document.getElementById(tabId).classList.add('active');
-            document.querySelector(`.editor-tabs button[data-tab="${tabId}"]`).classList.add('active-tab');
-        }
-
-        document.querySelectorAll('.editor-tabs button').forEach(button => {
-            button.addEventListener('click', function() {
-                const tabId = this.dataset.tab;
-                activateTab(tabId);
-                playClickSound();
-            });
-        });
 
         document.getElementById('editorNavBtn').addEventListener('click', function() {
             if (currentRole !== 'admin') {
@@ -3940,14 +4041,13 @@
             if (currentRole !== 'admin') return;
             playClickSound();
             document.getElementById('controlPanelModal').classList.add('open');
-            // انتقل إلى تبويب الإعدادات المتقدمة حيث توجد إدارة الفواتير
             activateTab('tabAdvanced');
             document.getElementById('extraFeeName').focus();
             syncSettingsToModal();
         });
 
         // ============================================================
-        //  14. تطبيق الإعدادات من محرر الموقع
+        //  16. تطبيق الإعدادات من محرر الموقع
         // ============================================================
         function applyLogoUrl() {
             const url = document.getElementById('settingsLogoUrl').value.trim();
@@ -4110,6 +4210,9 @@
             if (persist) saveSettings();
         }
 
+        // ============================================================
+        //  17. إدارة الفواتير الإضافية
+        // ============================================================
         function addExtraFee() {
             const name = document.getElementById('extraFeeName').value.trim();
             const amount = document.getElementById('extraFeeAmount').value.trim();
@@ -4197,16 +4300,6 @@
             container.innerHTML = html;
         }
 
-        function escapeHtml(value) {
-            return value.replace(/[&<>'"]/g, character => ({
-                '&': '&amp;',
-                '<': '&lt;',
-                '>': '&gt;',
-                "'": '&#39;',
-                '"': '&quot;'
-            }[character]));
-        }
-
         function updateFeeTotals() {
             let paidTotal = 0;
             let unpaidTotal = 0;
@@ -4267,7 +4360,7 @@
         }
 
         // ============================================================
-        //  15. مودال تأكيد الدفع - التحكم في التعديل
+        //  18. مودال تأكيد الدفع - التعديل
         // ============================================================
         let isEditModeActive = false;
         let originalValues = {};
@@ -4364,7 +4457,7 @@
         }
 
         // ============================================================
-        //  16. تهيئة عامة
+        //  19. تهيئة عامة
         // ============================================================
         applyCountdownStyle(countdownStyle, false);
         loadSettings();
@@ -4374,7 +4467,7 @@
         updateFeeTotals();
 
         // ============================================================
-        //  17. ربط أحداث مودال تأكيد الدفع
+        //  20. ربط أحداث مودال تأكيد الدفع
         // ============================================================
         document.getElementById('confirmRequestBtn').addEventListener('click', function() {
             playClickSound();
@@ -4413,7 +4506,6 @@
             cancelEditChanges();
         });
 
-        // زر تأكيد الدفع - يغلق المودال فقط دون أي رسالة إضافية
         document.getElementById('confirmPaymentActionBtn').addEventListener('click', function() {
             playClickSound();
             if (isEditModeActive) {
@@ -4428,7 +4520,7 @@
         });
 
         // ============================================================
-        //  18. مودال الجلسة (محاكاة)
+        //  21. مودال الجلسة (محاكاة)
         // ============================================================
         document.querySelector('.nav-item[data-section="jalsah"]').addEventListener('click', function() {
             if (currentRole !== 'admin') {
@@ -4466,7 +4558,7 @@
         });
 
         // ============================================================
-        //  19. طباعة / تحميل الفاتورة
+        //  22. طباعة / تحميل الفاتورة
         // ============================================================
         function printInvoice() {
             playClickSound();
@@ -4517,7 +4609,7 @@
         }
 
         // ============================================================
-        //  20. إغلاق المودال عند النقر خارجها
+        //  23. إغلاق المودال عند النقر خارجها
         // ============================================================
         document.querySelectorAll('.modal-overlay').forEach(overlay => {
             overlay.addEventListener('click', function(e) {
@@ -4529,7 +4621,7 @@
         });
 
         // ============================================================
-        //  21. حماية أساسية
+        //  24. حماية أساسية
         // ============================================================
         document.getElementById('memberDisplay').style.display = 'none';
 
@@ -4546,7 +4638,7 @@
         });
 
         // ============================================================
-        //  22. زر إلغاء الطلب
+        //  25. زر إلغاء الطلب
         // ============================================================
         document.getElementById('cancelRequestBtn').addEventListener('click', function() {
             if (confirm('هل أنت متأكد من إلغاء الطلب؟ هذا الإجراء غير قابل للتراجع.')) {
@@ -4556,7 +4648,7 @@
         });
 
         // ============================================================
-        //  23. دالة إعادة ضبط الموقع
+        //  26. إعادة ضبط الموقع
         // ============================================================
         function resetSiteSettings() {
             if (confirm('هل أنت متأكد من إعادة ضبط جميع إعدادات الموقع إلى القيم الأساسية؟ سيتم حذف جميع التعديلات المحفوظة.')) {
@@ -4568,10 +4660,8 @@
         }
 
         console.log('✅ تم تطبيق جميع التعديلات بنجاح.');
-        console.log('✅ تم إعادة هيكلة محرر الموقع بأربع تبويبات رئيسية (نصوص، صورة شعار، قالب، إعدادات متقدمة).');
-        console.log('✅ تم الحفاظ على جميع الوظائف الحالية مع تحسين واجهة المستخدم.');
-        console.log('✅ زر تأكيد الدفع يغلق المودال فقط دون عرض رسائل إضافية.');
-        console.log('✅ تم إضافة فواصل بين أقسام معلومات الطلب (معلومات الطلب، معلومات العامل، معلومات صاحب العمل).');
+        console.log('✅ تم إضافة أزرار إظهار/إخفاء وتعديل لبيانات العامل وصاحب العمل في محرر الموقع.');
+        console.log('✅ يتم حفظ حالات الإظهار في localStorage.');
     </script>
 
 </body>
